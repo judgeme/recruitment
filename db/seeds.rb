@@ -1,3 +1,5 @@
+puts("You can also run `pg_restore --verbose --clean --no-acl --no-owner -h localhost -d challenge_development db/challenge_development.dump`")
+
 500.times.map{ |i| Shop.create(name: Faker::Company.name) }
 
 def create_products_for_shop(shop, products_count = 1000)
