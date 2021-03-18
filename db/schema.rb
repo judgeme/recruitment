@@ -16,20 +16,20 @@ ActiveRecord::Schema.define(version: 2021_03_18_095931) do
   enable_extension "plpgsql"
 
   create_table "products", force: :cascade do |t|
-    t.bigint "shops_id"
+    t.bigint "shop_id"
     t.string "title"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["shops_id"], name: "index_products_on_shops_id"
+    t.index ["shop_id"], name: "index_products_on_shop_id"
   end
 
   create_table "reviews", force: :cascade do |t|
-    t.bigint "products_id"
+    t.bigint "product_id"
     t.string "body"
     t.float "rating"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["products_id"], name: "index_reviews_on_products_id"
+    t.index ["product_id"], name: "index_reviews_on_product_id"
   end
 
   create_table "shops", force: :cascade do |t|
