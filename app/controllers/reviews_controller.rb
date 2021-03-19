@@ -20,7 +20,7 @@ class ReviewsController < ApplicationController
     # TODO: Create reviews in background
 
     tags = tags_with_default(params)
-    Review.create(product_id: params[:product_id], body: params[:body], rating: params[:rating], tags: tags)
+    Review.create(product_id: params[:product_id], body: params[:body], rating: params[:rating], reviewer_name: params[:reviewer_name], tags: tags)
 
     flash[:notice] = 'Review is being created in background. It might take a moment to show up'
     redirect_to :index
