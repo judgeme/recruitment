@@ -17,7 +17,7 @@ class ReviewsController < ApplicationController
   end
 
   def create
-    # TODO: Create reviews in background
+    # TODO: Create reviews in background. No need to show errors (if any) to users, it's fine to skip creating the review silently when some validations fail.
 
     tags = tags_with_default(params)
     Review.create(product_id: params[:product_id], body: params[:body], rating: params[:rating], reviewer_name: params[:reviewer_name], tags: tags)
