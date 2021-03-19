@@ -23,7 +23,7 @@ class ReviewsController < ApplicationController
     Review.create(product_id: params[:product_id], body: params[:body], rating: params[:rating], reviewer_name: params[:reviewer_name], tags: tags)
 
     flash[:notice] = 'Review is being created in background. It might take a moment to show up'
-    redirect_to :index
+    redirect_to action: :index, shop_id: Product.find_by(id: params[:product_id]).shop_id
   end
 
   private
