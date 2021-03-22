@@ -1,7 +1,7 @@
 # JudgeMe Coding Challenge - Full-stack Engineer
 
 ## 1. Challenges
-This challange is about dealing with reviews. We have prepared for you 3 models: `Review`, `Product`, and `Shop` and some legacy code which you need to discover it yourself. Your challenges are:
+This challenge is about dealing with reviews. We have prepared for you 3 models: `Review`, `Product`, and `Shop` and some legacy code which you need to discover it yourself. Your challenges are:
 
 1. Build a page to submit a review form for new reviews for a specific shop & product in background (async). Please check out the [design](https://www.figma.com/file/d9raNQDcOgKWvhUKNsbIi6/RoR-assignments?node-id=0%3A1) for the submit form.
 2. Build a page to show reviews for all products of a selected shop. In every product, show reviews pagination using AJAX. Also, using AJAX pagination for products. Every product should have its own image by using the first character in the product title to show in a circle (avatar concept). Please check out the [design](https://www.figma.com/file/d9raNQDcOgKWvhUKNsbIi6/RoR-assignments?node-id=0%3A1)
