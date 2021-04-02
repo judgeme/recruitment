@@ -1,13 +1,13 @@
-# JudgeMe Coding Challenge - Full-stack Engineer
+# Judge.me Coding Challenge - Full-stack Engineer
 
 ## 1. Challenges
 This challenge is about dealing with reviews. We have prepared for you 3 models: `Review`, `Product`, and `Shop` and some legacy code which you need to discover it yourself. Your challenges are:
 
 1. Build a page to submit a review form for new reviews for a specific shop & product in background (async). Please check out the [design](https://www.figma.com/file/d9raNQDcOgKWvhUKNsbIi6/RoR-assignments?node-id=0%3A1) for the submit form.
 2. Build a page to show reviews for all products of a selected shop. In every product, show reviews pagination using AJAX. Also, using AJAX pagination for products. Every product should have its own image by using the first character in the product title to show in a circle (avatar concept). Please check out the [design](https://www.figma.com/file/d9raNQDcOgKWvhUKNsbIi6/RoR-assignments?node-id=0%3A1)
-3. Build a page to show the change of average ratings (in the scale of 5) of 2 consecutive months of a shop in the last 3 months. You design the page for this task yourself.  
+3. Build a page to show the change of average ratings (in the scale of 5) of 2 consecutive months of a shop in the last 3 months. You design the page for this task yourself.
 *For example:
-We are currently in October, and the average ratings of September, August and July are `4.2`, `3.5`, `4.8` respectively.  
+We are currently in October, and the average ratings of September, August and July are `4.2`, `3.5`, `4.8` respectively.
 Therefore the expected output are: `-1.3` (3.5 - 4.8) and `0.7` (4.2 - 3.5)*
 
 ## 2. Expectations
@@ -21,6 +21,10 @@ Therefore the expected output are: `-1.3` (3.5 - 4.8) and `0.7` (4.2 - 3.5)*
 - We are using Ruby 3.0 and Rails 6.0
 - We have create database schema for the app. But you will also need to import the dumped database to have data for your challenges. Please find the dumped database at `/db/challenge_development.dump`
 
+## Notes
+- Legacy code in this coding challenge is intentionally bad, while our actual codebase is not that bad, hopefully.
+- There are at least 3 hidden easter eggs (i.e. bugs or slow code) in this challenge, ranging from easy to very hard.
+
 If you have any question or need to clarify the requirements, feel free to talk to us.
 
-**Goodluck and happy coding!**
+**Good luck and happy coding!**
