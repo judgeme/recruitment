@@ -1,7 +1,12 @@
 # README
 
+<<<<<<< ours
 This README would normally document whatever steps are necessary to get the
 application up and running.
+=======
+## 1. Challenges
+This challenge is about dealing with reviews. We have prepared for you 3 models: `Review`, `Product`, and `Shop` and some legacy code which you need to discover it yourself. Your challenges are:
+>>>>>>> theirs
 
 Things you may want to cover:
 
@@ -11,6 +16,7 @@ Things you may want to cover:
 
 * Configuration
 
+<<<<<<< ours
 * Database creation
 
 * Database initialization
@@ -22,3 +28,6 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+=======
+**Goodluck and happy coding!**
+>>>>>>> theirs
