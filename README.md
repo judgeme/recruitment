@@ -75,9 +75,12 @@ rails s
 
 # 10. Start Sidekiq in another terminal session
 sidekiq
+
+# 11. Start Webpack dev server
+bin/webpack-dev-server
 ```
-11. Please open a new Issue if this is not clear
-12. Once finishing, please commit, push to GitHub and open a new Pull Request
+12. Please open a new Issue, or email us if something is not clear
+13. Once finishing, please commit, push to GitHub and open a new Pull Request
 
 If you have any question or need to clarify the requirements, feel free to talk to us.
 
