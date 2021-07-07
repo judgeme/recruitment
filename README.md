@@ -29,6 +29,9 @@ Therefore the expected output are: `-1.3` (3.5 - 4.8) and `0.7` (4.2 - 3.5)*
 - Please write codes in a way [that others](https://github.com/judgeme-careers/interview-code-challenge/blob/master/app/assets/images/always-code-as-if-the-person-who-will-maintain-your-code-is-a-maniac-serial-killer-knows-where-you-live.jpg?raw=true) and you in the future can understand.
 - You can google anything. You can use JavaScript or CSS libraries but choose wisely.
 
+### RSpec test:
+- Please write tests using Capybara and RSpec, to cover functionalities of the 3 page (review submission, listing reviews, and simple average rating report page)
+
 ### GitHub flow:
 - Pull this GitHub project, create a new branch, commit your codes, push to GitHub and [open an new Pull Request](https://github.com/judgeme-careers/interview-code-challenge-rails-full-stack/compare/master...develop).
 - Write understandable and meaningful commit messages [that others](/app/assets/images/always-code-as-if-the-person-who-will-maintain-your-code-is-a-maniac-serial-killer-knows-where-you-live.jpg?raw=true) and you in the future can understand.
