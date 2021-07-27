@@ -24,30 +24,30 @@ Therefore the expected output are: `-1.3` (3.5 - 4.8) and `0.7` (4.2 - 3.5)*
 - Build review and product paginations on the 2nd page `/reviews` with AJAX.
 
 ### Prioritization and Maintainability:
-- Estimated time is 4-5 hours so time it wisely. You should work on more important parts first. E.g. functionalities -> styling/UI -> refactor.
+- Estimated time is 4-5 hours so time it wisely. You should work on more important parts first. E.g. functionalities -> styling/UI -> refactor -> write tests.
 - Please follow best practices and conventions (e.g. use SCSS, 2 spaces indentation, BEM format when naming CSS classes, service objects).
-- Please write codes in a way [that others](https://github.com/judgeme-careers/interview-code-challenge/blob/master/app/assets/images/always-code-as-if-the-person-who-will-maintain-your-code-is-a-maniac-serial-killer-knows-where-you-live.jpg?raw=true) and you in the future can understand.
+- Please write codes in a way [that others](https://pub-images.judge.me/judgeme/always-code-as-if-the-person-who-will-maintain-your-code-is-a-maniac-serial-killer-knows-where-you-live.jpg) and you in the future can understand.
 - You can google anything. You can use JavaScript or CSS libraries but choose wisely.
 
 ### RSpec test:
-- Please write tests using Capybara and RSpec, to cover functionalities of the 3 page (review submission, listing reviews, and simple average rating report page)
+- Please write tests using Capybara and RSpec, to cover functionalities of the 3 pages (review submission, listing reviews, and simple average rating report page)
 
 ### GitHub flow:
-- Pull this GitHub project, create a new branch, commit your codes, push to GitHub and [open an new Pull Request](https://github.com/judgeme-careers/interview-code-challenge-rails-full-stack/compare/master...develop).
-- Write understandable and meaningful commit messages [that others](/app/assets/images/always-code-as-if-the-person-who-will-maintain-your-code-is-a-maniac-serial-killer-knows-where-you-live.jpg?raw=true) and you in the future can understand.
+- Pull this GitHub project, create a new branch `develop`, commit your codes, push to GitHub and [open an new Pull Request](https://github.com/judgeme-careers/full-stack--your-name/compare/master...develop).
+- Write understandable and meaningful commit messages [that others](https://pub-images.judge.me/judgeme/always-code-as-if-the-person-who-will-maintain-your-code-is-a-maniac-serial-killer-knows-where-you-live.jpg) and you in the future can understand.
 
 ## TIPS:
 + It's okay and don't feel bad if you can't finish 100%. We check based on HOW rather than WHAT you approach to the solution.
 + You can change `.ruby-version` to match the version in your machine to save time from setting up project.
 
 ## 3. Instructions
-This project is very simple so the setup steps should be as simple as:
+This project is "simple" so the setup steps should be as "simple" as:
 
 (If you already have `rvm` and `ruby-3.x.x`, you can change `.ruby-version` to match the version in your machine and skip steps 2-6)
 
 ```bash
 # 1. To pull this project
-git clone https://github.com/judgeme-careers/interview-code-challenge-rails-full-stack.git && cd interview-code-challenge-rails-full-stack
+git clone https://github.com/judgeme-careers/full-stack--your-name.git && cd full-stack--your-name
 
 # 2. To install RVM - https://rvm.io/rvm/install#installation)
 \curl -sSL https://get.rvm.io | bash -s stable
@@ -56,33 +56,32 @@ git clone https://github.com/judgeme-careers/interview-code-challenge-rails-full
 rvm install ruby-3.0.0
 
 # 4. Go out and back to the repo to refresh gemset
-cd .. && cd interview-code-challenge-rails-full-stack
+cd .. && cd full-stack--your-name
 
 # 5. To install bundler
 gem install bundler
 
-# 6. Install all necessary gems
+# 7. Install all necessary gems and JS libraries. This can take a few minutes.
 bundle
+yarn
 
 # 7. Init DB
-rake db:create db:migrate
+bundle exec rake db:create db:migrate
 
 # 8. Seed, restore DB
-pg_restore --verbose --clean --no-acl --no-owner -h localhost -d challenge_development db/challenge_development.dump # Or you can run `rake db:seed`
+pg_restore --verbose --clean --no-acl --no-owner -h localhost -d challenge_development db/challenge_development.dump # Or you can run `bundle exec rake db:seed`
 
 # 9. Start server
 rails s
 
 # 10. Start Sidekiq in another terminal session
-sidekiq
+bundle exec sidekiq
 
-# 11. Start Webpack dev server
+# 11. Start Webpack dev server (also in another terminal session)
 bin/webpack-dev-server
 ```
 12. Please open a new Issue, or email us if something is not clear
 13. Once finishing, please commit, push to GitHub and open a new Pull Request
-
-If you have any question or need to clarify the requirements, feel free to talk to us.
 
 ## Notes
 - Legacy code in this coding challenge is intentionally bad, while our actual codebase is not that bad, hopefully.
