@@ -38,3 +38,6 @@
 /yarn-error.log
 yarn-debug.log*
 .yarn-integrity
+
+# Ignore this big file to clone, and push code faster
+/db/challenge_development.dump

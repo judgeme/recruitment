@@ -69,7 +69,9 @@ yarn
 bundle exec rake db:create db:migrate
 
 # 8. Seed, restore DB
-pg_restore --verbose --clean --no-acl --no-owner -h localhost -d challenge_development db/challenge_development.dump # Or you can run `bundle exec rake db:seed`
+# You can run `bundle exec rake db:seed`, do the step below to restore DB:
+# Download DB dump file from Google Drive https://drive.google.com/file/d/1qpp82e_SiKPltnUHDyWItAerGs4rwQxy/view?usp=sharing to `db/challenge_development.dump`, and then run:
+pg_restore --verbose --clean --no-acl --no-owner -h localhost -d challenge_development db/challenge_development.dump
 
 # 9. Start server
 rails s
