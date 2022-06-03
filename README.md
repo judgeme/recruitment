@@ -39,11 +39,11 @@ Therefore the expected output are: `-1.3` (3.5 - 4.8) and `0.7` (4.2 - 3.5)*
 - Pull this GitHub project, create a new branch `develop`, commit your codes, push to GitHub and [open an new Pull Request](https://github.com/judgeme-careers/full-stack--your-name/compare/master...develop).
 - Write understandable and meaningful commit messages [that others](https://pub-images.judge.me/judgeme/always-code-as-if-the-person-who-will-maintain-your-code-is-a-maniac-serial-killer-knows-where-you-live.jpg) and you in the future can understand.
 
-## TIPS:
+## 3. TIPS:
 + It's okay and don't feel bad if you can't finish 100%. We check based on HOW rather than WHAT you approach to the solution.
 + You can change `.ruby-version` to match the version in your machine to save time from setting up project.
 
-## 3. Instructions
+## 4. Instructions
 This project is "simple" so the setup steps should be as "simple" as:
 
 (If you already have `rvm` and `ruby-3.x.x`, you can change `.ruby-version` to match the version in your machine and skip steps 2-6)

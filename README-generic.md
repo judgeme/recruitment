@@ -42,16 +42,16 @@ Therefore the expected output are: `-1.3` (3.5 - 4.8) and `0.7` (4.2 - 3.5)*
 - Pull this GitHub project, create a new branch `develop`, commit your codes, push to GitHub and [open an new Pull Request](https://github.com/judgeme-careers/full-stack--your-name/compare/master...develop).
 - Write understandable and meaningful commit messages [that others](https://pub-images.judge.me/judgeme/always-code-as-if-the-person-who-will-maintain-your-code-is-a-maniac-serial-killer-knows-where-you-live.jpg) and you in the future can understand.
 
-## TIPS:
+## 3. TIPS:
 + It's okay and don't feel bad if you can't finish 100%. We check based on HOW rather than WHAT you approach to the solution.
 
-## 3. Instructions
+## 4. Instructions
 - Unfortunately there are no instructions to set up the project since you can use any language/framework.
 - To get started, you can delete all of the files in this repo, except for the Git files and the 2 README files.
 - Please open a new Issue, or email us if something is not clear.
 - Once finishing, please commit, push to GitHub and open a new Pull Request and ping `damhonglinh`.
 
-## Notes
+## 5. Notes
 - To make the challenge more interesting, there are at least 4 hidden easter eggs (i.e. bugs or slow code) in this challenge, ranging from easy to very hard. However, unfortunately these easter eggs are in the Rails code only so this generic version doesn't have them.
 
 If you have any question or need to clarify the requirements, feel free to talk to us.
