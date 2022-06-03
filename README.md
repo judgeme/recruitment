@@ -1,5 +1,8 @@
 # Judge.me Coding Challenge - Full-stack Engineer
 
+## Not familiar with Rails?
+If you are not familiar with Rails, we have a generic version of the challenges so you can choose any language and framework that you like. Please see file `README-generic.md` for the generic version of the instruction.
+
 ## 1. Challenges
 This challenge is about dealing with reviews. We have prepared for you 3 models: `Review`, `Product`, and `Shop` and some legacy code which you need to discover it yourself. Your challenges are:
 
