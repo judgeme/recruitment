@@ -13,9 +13,6 @@ The challenges are about dealing with reviews. Your challenges are:
     - You should delete all of the files in this repo, except for the Git files and the 2 README files, since these files are for Rails only.
 1. Follow this [design](https://www.figma.com/file/d9raNQDcOgKWvhUKNsbIi6/RoR-assignments?node-id=0%3A1) to build a page (with URL `/reviews/new`) to submit a new review for a specific shop & product (using their ID), and the review creation should be run in background (async).
 1. Follow this [design](https://www.figma.com/file/d9raNQDcOgKWvhUKNsbIi6/RoR-assignments?node-id=0%3A1) to build a page (with URL `/reviews`) to show a list of products (optionally of a selected shop) with pagination. And in each product, show its reviews with AJAX pagination. Bonus, use AJAX pagination for the list of products as well. Note: for product images, you can use the first character in the product title wrapped in a circle.
-1. Build a page to show the change of average ratings (in the scale of 5) of 2 consecutive months of a shop in the last 3 months. For simplicity, the design of this page is not important and it can be text base.
-    - *For example: We are currently in October, and the average ratings of September, August and July are `4.2`, `3.5`, `4.8` respectively.
-Therefore the expected output are: `-1.3` (3.5 - 4.8) and `0.7` (4.2 - 3.5)*
 
 ## 2. Expectations
 
@@ -52,7 +49,7 @@ Therefore the expected output are: `-1.3` (3.5 - 4.8) and `0.7` (4.2 - 3.5)*
 - Once finishing, please commit, push to GitHub and open a new Pull Request and ping `damhonglinh`.
 
 ## 5. Notes
-- To make the challenge more interesting, there are at least 4 hidden easter eggs (i.e. bugs or slow code) in this challenge, ranging from easy to very hard. However, unfortunately these easter eggs are in the Rails code only so this generic version doesn't have them.
+- To make the challenge more interesting, there are at least 4 hidden easter eggs (i.e. bugs or slow code) in this challenge, ranging from easy to very hard. **However, unfortunately these easter eggs are in the Rails code only so this generic version doesn't have them.**
 
 If you have any question or need to clarify the requirements, feel free to talk to us.
 
