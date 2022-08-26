@@ -51,6 +51,6 @@ The challenges are about dealing with reviews. Your challenges are:
 ## 5. Notes
 - To make the challenge more interesting, there are at least 4 hidden easter eggs (i.e. bugs or slow code) in this challenge, ranging from easy to very hard. **However, unfortunately these easter eggs are in the Rails code only so this generic version doesn't have them.**
 
-If you have any question or need to clarify the requirements, feel free to talk to us.
+If you have any question or need to clarify the requirements, feel free to talk to us (via GitHub Issue, or via email).
 
 **Good luck and happy coding!**

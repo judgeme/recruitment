@@ -28,7 +28,12 @@ class ReviewsController < ApplicationController
 
   private
 
-  # Prepend params[:tags] with tags of the shop if present or DEFAULT_TAGS
+  # Prepend `params[:tags]` with tags of the shop (if present) or DEFAULT_TAGS
+  # The logic/requirement of tags is that:
+  #  - A review can have `tags` (for simplicity, tags are just an array of strings)
+  #  - If the shop has some `tags`, those tags of the shop should be part of the review's `tags`
+  #  - Else (if the shop doesn't have any `tags`), the default tags (in constant `DEFAULT_TAGS`) should be part of the review's `tags`
+  # One may wonder what an odd logic and lenthy comment, thus may suspect something hidden here, an easter egg perhaps.
   def tags_with_default(params)
     product = Product.find_by(id: params[:product_id])
     default_tags = product.shop.tags || DEFAULT_TAGS

@@ -1,7 +1,7 @@
 # Judge.me Coding Challenge - Full-stack Engineer
 
 ## Not familiar with Rails?
-If you are not familiar with Rails, we have a generic version of the challenges so you can choose any language and framework that you like. Please see file `README-generic.md` for the generic version of the instruction.
+If you are not familiar with Rails, we have a generic version of the challenge so you can choose any language and framework that you like. Please see file `README-generic.md` for the generic version of the instruction.
 
 ## 1. Challenges
 This challenge is about dealing with reviews. We have prepared for you 3 models: `Review`, `Product`, and `Shop` and some legacy code which you need to discover it yourself. Your challenges are:
@@ -16,7 +16,7 @@ Therefore the expected output are: `-1.3` (3.5 - 4.8) and `0.7` (4.2 - 3.5)*
 ## 2. Expectations
 
 ### Rails:
-- Build the functionality to create reviews in background with sidekiq
+- Build the functionality to create reviews in background with Sidekiq
 - Build the functionality to query products and reviews, efficiently
 - Read and improve legacy code
 
@@ -72,7 +72,7 @@ yarn
 bundle exec rake db:create db:migrate
 
 # 8. Seed, restore DB
-# You can run `bundle exec rake db:seed`, do the step below to restore DB:
+# You can run `bundle exec rake db:seed`, or do the step below to restore the DB:
 # Download DB dump file from Google Drive https://drive.google.com/file/d/1qpp82e_SiKPltnUHDyWItAerGs4rwQxy/view?usp=sharing to `db/challenge_development.dump`, and then run:
 pg_restore --verbose --clean --no-acl --no-owner -h localhost -d challenge_development db/challenge_development.dump
 
@@ -92,6 +92,6 @@ bin/webpack-dev-server
 - Legacy code in this coding challenge is intentionally bad, while our actual codebase is not that bad, hopefully.
 - To make the challenge more interesting, there are at least 4 hidden easter eggs (i.e. bugs or slow code) in this challenge, ranging from easy to very hard. They are optional but should be fun to find and fix. Tips: they are all in the controller or `app/views/reviews/index.slim` file.
 
-If you have any question or need to clarify the requirements, feel free to talk to us.
+If you have any question or need to clarify the requirements, feel free to talk to us (via GitHub Issue, or via email).
 
 **Good luck and happy coding!**
