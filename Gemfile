@@ -37,6 +37,7 @@ group :development, :test do
   gem 'pry-rails'
   gem 'pry-byebug'
   gem 'faker'
+  gem 'colorize'
 end
 
 group :development do

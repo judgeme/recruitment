@@ -1,4 +1,7 @@
-puts("You can also run `pg_restore --verbose --clean --no-acl --no-owner -h localhost -d challenge_development db/challenge_development.dump`")
+
+puts("IMPORTANT NOTE: This seed may run quite long, so you may want to run this command\n\t$ pg_restore --verbose --clean --no-acl --no-owner -h localhost -d challenge_development db/challenge_development.dump".yellow)
+puts("But first, you'd need to download our prepared DB dump file from https://drive.google.com/file/d/1qpp82e_SiKPltnUHDyWItAerGs4rwQxy/view?usp=sharing to `db/challenge_development.dump`".yellow)
+
 
 500.times.map{ |i| Shop.create(name: Faker::Company.name) }
 
