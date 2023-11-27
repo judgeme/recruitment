@@ -30,7 +30,8 @@ Therefore the expected output are: `-1.3` (3.5 - 4.8) and `0.7` (4.2 - 3.5)*
 - Estimated time is 4-5 hours so time it wisely. You should work on more important parts first. E.g. functionalities -> styling/UI -> refactor -> write tests.
 - Please follow best practices and conventions (e.g. use SCSS, 2 spaces indentation, BEM format when naming CSS classes, service objects).
 - Please write codes in a way [that others](https://pub-images.judge.me/judgeme/always-code-as-if-the-person-who-will-maintain-your-code-is-a-maniac-serial-killer-knows-where-you-live.jpg) and you in the future can understand.
-- You can google anything. You can use JavaScript or CSS libraries but choose wisely.
+- You can google anything. You can use any libraries (e.g. Ruby gems, JavaScript or CSS libraries).
+    - You can also use a frontend framework library (e.g. Vue or React) if you prefer.
 
 ### RSpec test:
 - Please write tests using Capybara and RSpec, to cover functionalities of the 3 pages (review submission, listing reviews, and simple average rating report page)
