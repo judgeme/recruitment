@@ -15,6 +15,8 @@ Therefore the expected output are: `-1.3` (3.5 - 4.8) and `0.7` (4.2 - 3.5)*
 
 ## 2. Expectations
 
+(In descending order of importance)
+
 ### Rails:
 - Build the functionality to create reviews in background with Sidekiq
 - Build the functionality to query products and reviews, efficiently
@@ -26,15 +28,22 @@ Therefore the expected output are: `-1.3` (3.5 - 4.8) and `0.7` (4.2 - 3.5)*
 ### JavaScript
 - Build review and product paginations on the 2nd page `/reviews` with AJAX.
 
-### Prioritization and Maintainability:
-- Estimated time is 4-5 hours so time it wisely. You should work on more important parts first. E.g. functionalities -> styling/UI -> refactor -> write tests.
-- Please follow best practices and conventions (e.g. use SCSS, 2 spaces indentation, BEM format when naming CSS classes, service objects).
-- Please write codes in a way [that others](https://pub-images.judge.me/judgeme/always-code-as-if-the-person-who-will-maintain-your-code-is-a-maniac-serial-killer-knows-where-you-live.jpg) and you in the future can understand.
+### Prioritization
+- Estimated time is 4-5 hours. It's possible, albeit highly difficult, to complete everything this within that time. So you'd need to prioritize more important parts first. E.g. functionalities -> styling/UI -> write tests -> refactor for readability -> optimize for performance.
+- If you can't finish 100% (which is totally fine) within the time frame, please include one sentence in the PR description to briefly explain your prioritization.
 - You can google anything. You can use any libraries (e.g. Ruby gems, JavaScript or CSS libraries).
-    - You can also use a frontend framework library (e.g. Vue or React) if you prefer.
+    - You can also use a frontend framework library (e.g. Vue or React) if you prefer, but setting it up may take sometime.
+
+### Maintainability:
+- Please follow best practices and conventions (e.g. use SCSS, 2 spaces indentation, BEM format in CSS naming, service objects, RESTful).
+- Please write codes in a way [that others](https://pub-images.judge.me/judgeme/always-code-as-if-the-person-who-will-maintain-your-code-is-a-maniac-serial-killer-knows-where-you-live.jpg) and you in the future can understand.
 
 ### RSpec test:
 - Please write tests using Capybara and RSpec, to cover functionalities of the 3 pages (review submission, listing reviews, and simple average rating report page)
+
+### Performance (bonus):
+- Imagine now that we have millions of products, millions of reviews, and tens of thousands of shops. How can we optimize (e.g. queries, DB structure, or applying some techs)?
+- If there is not enough time to code the optimization, some explanation, either in code comments or PR description, is already sufficient.
 
 ### GitHub flow:
 - Pull this GitHub project, create a new branch `develop`, commit your codes, push to GitHub and [open an new Pull Request](https://github.com/judgeme-careers/full-stack--your-name/compare/master...develop).

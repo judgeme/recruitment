@@ -29,6 +29,7 @@ class ReviewsController < ApplicationController
   private
 
   # Prepend `params[:tags]` with tags of the shop (if present) or DEFAULT_TAGS
+  # For simplicity, let's skip the frontend for `tags`, and just assume frontend can somehow magically send to backend `params[:tags]` as a comma-separated string
   # The logic/requirement of tags is that:
   #  - A review can have `tags` (for simplicity, tags are just an array of strings)
   #  - If the shop has some `tags`, those tags of the shop should be part of the review's `tags`
