@@ -45,10 +45,6 @@ Therefore the expected output are: `-1.3` (3.5 - 4.8) and `0.7` (4.2 - 3.5)*
 - Imagine now that we have millions of products, millions of reviews, and tens of thousands of shops. How can we optimize (e.g. queries, DB structure, or applying some techs)?
 - If there is not enough time to code the optimization, some explanation, either in code comments or PR description, is already sufficient.
 
-### GitHub flow:
-- Pull this GitHub project, create a new branch `develop`, commit your codes, push to GitHub and [open an new Pull Request](https://github.com/judgeme-careers/full-stack--your-name/compare/master...develop).
-- Write understandable and meaningful commit messages [that others](https://pub-images.judge.me/judgeme/always-code-as-if-the-person-who-will-maintain-your-code-is-a-maniac-serial-killer-knows-where-you-live.jpg) and you in the future can understand.
-
 ## 3. TIPS:
 + It's okay and don't feel bad if you can't finish 100%. We check based on HOW rather than WHAT you approach to the solution.
 + You can change `.ruby-version` to match the version in your machine to save time from setting up project.

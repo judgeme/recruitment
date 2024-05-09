@@ -35,10 +35,6 @@ The challenges are about dealing with reviews. Your challenges are:
 ### Tests:
 - Please write some tests to cover basic cases of the functionalities of the 3 pages (review submission, listing reviews, and simple average rating report page)
 
-### GitHub flow:
-- Pull this GitHub project, create a new branch `develop`, commit your codes, push to GitHub and [open an new Pull Request](https://github.com/judgeme-careers/full-stack--your-name/compare/master...develop).
-- Write understandable and meaningful commit messages [that others](https://pub-images.judge.me/judgeme/always-code-as-if-the-person-who-will-maintain-your-code-is-a-maniac-serial-killer-knows-where-you-live.jpg) and you in the future can understand.
-
 ## 3. TIPS:
 + It's okay and don't feel bad if you can't finish 100%. We check based on HOW rather than WHAT you approach to the solution.
 
