@@ -12,4 +12,4 @@ If you've been sent here by one of our team to complete a technical assessment -
 5. Please feel free to respond to any comments left as an open discussion.
 
 ### Full Stack Developer
-Please head over to /tasks/fullStack/README.md to get started.
+Please head over to [/tasks/fullStack/README.md](/tasks/fullStack/README.md) to get started.
