@@ -1,4 +1,5 @@
 # Judge.me Coding Challenge - Full-stack Engineer
+This assessment is quite lengthy, but we ask that you don’t spend more than 5 hours working on it (you don’t have to do it all in one go!) If you don’t finish in that time, that’s absolutely fine - we want to see how you prioritise! 
 
 ## Not familiar with Rails?
 If you are not familiar with Rails, we have a generic version of the challenge so you can choose any language and framework that you like. Please see file `README-generic.md` for the generic version of the instruction.
