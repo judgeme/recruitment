@@ -1,7 +1,10 @@
 # Judge.me Coding Challenge - Full-stack Engineer (Generic version)
 
 This is the generic version of instruction for those who are not familiar with Rails. In this generic version, you can use any language and framework that you like to complete the challenge.
-If you are familiar with Rails, please go to file `README.md` for the instruction for Rails instead.
+If you are familiar with Rails, please go to file `README.md` for the instruction for Rails instead.  
+
+This assessment is quite lengthy, but we ask that you don’t spend more than 5 hours working on it (you don’t have to do it all in one go!) If you don’t finish in that time, that’s absolutely fine - we want to see how you prioritise! 
+
 
 ## 1. Challenges
 The challenges are about dealing with reviews. Your challenges are:
