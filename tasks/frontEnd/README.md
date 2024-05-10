@@ -1,6 +1,6 @@
 # Judge.me Coding Challenge - Front-end Engineer
 Technical assessment for applications for the front-end Engineer role.  
-We ask that the task be completed using [Vue.js](https://vuejs.org/) as our existing front-end is written in it. However, if you're not familiar or comfortable with it, we will accept submissions that do not use Vue.   
+We ask that the task be completed using [Vue.js](https://vuejs.org/) as our existing front-end is written in it. We also utilise [Polaris Vue](https://ownego.github.io/polaris-vue/) to seamlessly integrate within Shopify. However, if you're not familiar or comfortable with Vue, we will accept submissions that do not use Vue.   
 This task is designed around a simple take on the interface reqwuired to enable management of review data. Please contain your code in this folder to ensure it can be reviewed easily.  
 
 ## Your task
@@ -51,14 +51,19 @@ On top of the basic requirements, you could also consider;
 - Documentation to aid future developers.
 - Pagination, sorting, searching & filtering.
 - Authentication.
+- Accessibility.
+- Caching.
 - Testing (perhaps running in CI).
 - Application performance.
+- Use of Polaris Vue.
 - Further optimisations.
 
 ## Review
 when you have completed the task and shared it with us, we will review the PR and provide comments, questions and challenges that we invite you to respond to. We do this in place of another video call, as it's closer to real world working, but still allows an opportunity for you to discuss and explain your choices.  
 Some things to expect to be discussed include;
-- Technology choices.
+- Browser compatibility.
+- Technology choices (including libraries & frameworks).
+- Approach to styling.
 - Code quality.
 - UI/UX choices.
 - Project setup and build steps etc.
