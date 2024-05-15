@@ -123,7 +123,7 @@ const onSubmit = async (
     aria-labelledby="review modal"
     @hide="onHide"
   >
-    <app-activity-loader :loading="loading">
+    <app-activity-loader :loading="loading" data-non-active="true">
       <app-card class="max-w-[60%] max-h-[500px] mx-auto overflow-auto p-15">
         <p class="text-xl text-primary mb-10 font-semibold">
           {{ mode === 'add' ? 'Add Review' : 'Edit Review' }}

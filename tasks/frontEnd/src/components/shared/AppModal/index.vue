@@ -47,7 +47,7 @@ const onClose = (event: Events['onClick']) => {
       >
         <div
           aria-hidden="true"
-          class="fixed inset-0 flex justify-center items-center bg-black/60 transition-opacity"
+          class="fixed inset-0 flex justify-center items-center bg-black/60 w-full transition-opacity"
           data-non-active="true"
         ></div>
         <div
