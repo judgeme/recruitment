@@ -1,9 +1,12 @@
 <script setup lang="ts">
 import { ref, watch, type Events } from 'vue';
+import { useCurrentUser } from 'vuefire';
 import { useRoute } from 'vue-router';
 
 import AppIcon from '@/components/shared/AppIcon/index.vue';
 import AppLink from '@/components/shared/AppLink/index.vue';
+
+import { useSignOut } from '@/composables/useAuth';
 
 const linkClass = `
   flex text-black-70 text-link 
@@ -16,6 +19,19 @@ const linkClass = `
 
 const open = ref(false);
 const route = useRoute();
+
+const user = useCurrentUser();
+const { onSignout } = useSignOut();
+
+async function handleAuth() {
+  if (!user.value) return;
+  try {
+    await onSignout();
+    open.value = false;
+  } catch (error) {
+    // handle error
+  }
+}
 
 function toggleMenu() {
   open.value = !open.value;
@@ -36,10 +52,6 @@ watch(
     open.value = false;
   }
 );
-const user = {
-  displayName: 'samson',
-  email: 'samsoniyanda@yahoo.com'
-};
 </script>
 <template>
   <header class="fixed top-0 left-0 right-0 w-full bg-white shadow-sm z-50">
@@ -153,7 +165,9 @@ const user = {
             </button>
           </li>
           <li v-if="user" class="flex justify-center text-center basis-full md:basis-auto">
-            <button aria-label="log out" :class="linkClass" type="button">Sign out</button>
+            <button aria-label="log out" :class="linkClass" type="button" @click="handleAuth">
+              Sign out
+            </button>
           </li>
           <li v-else class="flex justify-center text-center basis-full md:basis-auto">
             <app-link
@@ -216,6 +230,7 @@ const user = {
               aria-label="log out"
               class="text-white text-link font-bold tracking-link no-underline"
               type="button"
+              @click="handleAuth"
             >
               Sign Out
             </button>

@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router';
+import { getCurrentUser } from 'vuefire';
 
 import IndexPage from '@/pages/IndexPage.vue';
 
@@ -53,6 +54,26 @@ const router = createRouter({
       component: () => import('@/pages/ForgotPasswordPage.vue')
     }
   ]
+});
+
+router.beforeEach(async (to, _, next) => {
+  const currentUser = await getCurrentUser();
+  if (to.meta.requiresAuth) {
+    if (!currentUser) {
+      next({
+        path: '/login',
+        query: {
+          redirect: to.fullPath,
+        },
+      });
+    } else {
+      next();
+    }
+  } else {
+    if (!currentUser) {
+      next();
+    }
+  }
 });
 
 export default router;
