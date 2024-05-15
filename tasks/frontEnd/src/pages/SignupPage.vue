@@ -35,7 +35,7 @@ const onSubmit = async (
     await onSignUp(values);
     actions.resetForm();
   } catch (error) {
-    //
+    // todo add a ui toaster
   }
 };
 </script>

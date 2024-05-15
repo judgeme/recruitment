@@ -110,7 +110,7 @@ const onSubmit = async (
     }
     emit('hide');
   } catch (error) {
-    //
+    // todo add a ui toaster
   } finally {
     loading.value = false;
   }

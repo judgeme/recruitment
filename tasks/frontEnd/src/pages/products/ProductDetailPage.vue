@@ -23,7 +23,7 @@ async function getProduct(productId: string) {
     const response = await productService.getProduct(productId);
     product.value = response.data;
   } catch (err) {
-    // error handling
+    // todo add a ui toaster
   } finally {
     loading.value = false;
   }

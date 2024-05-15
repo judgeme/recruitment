@@ -14,6 +14,7 @@ import {
 import { useFirebaseAuth } from "vuefire";
 import type { FirebaseError } from "firebase/app";
 import { useRoute, useRouter } from 'vue-router';
+import reporter from '@/utils/reporter';
 
 /**
  * 
@@ -35,15 +36,7 @@ export const useSignInEmailPassword = () => {
       // redirect to the previous route user was tryig to access if it exist or just go to the homepage
       router.push(route.query.redirect as string || '/');
     } catch (error) {
-      if ((error as FirebaseError).name === 'FirebaseError') {
-        // const {
-        //   code,
-        //   message,
-        //   customData
-        // } = error as FirebaseError
-        //todo: error reporter e.g sentry
-      }
-
+      reporter(error);
     }
   }
 
@@ -71,7 +64,7 @@ export const useSignUpEmailPassword = () => {
       router.push('/');
       return result;
     } catch (error) {
-      //todo: error reporter e.g sentry
+      reporter(error);
     }
   }
 
@@ -110,9 +103,8 @@ export const useSignOut = () => {
           redirect: route.fullPath,
         },
       });
-    } catch (err) {
-      console.log(err);
-      // error reporter
+    } catch (error) {
+      reporter(error);
     }
   }
   return {
@@ -144,10 +136,9 @@ export const useProviderAuth = (strategy: 'google' | 'github' = 'github') => {
       await signInWithPopup(auth, provider);
       router.push(route.query.redirect as string || '/');
       loading.value = false;
-    } catch (err) {
-      const error = err as FirebaseError;
-      console.log(error, 333);
+    } catch (error) {
       loading.value = false;
+      reporter(error);
     }
   }
 
@@ -169,7 +160,7 @@ export const useUpdateProfile = () => {
       loading.value = false;
     } catch (error) {
       loading.value = false;
-      // error reporter
+      reporter(error);
     }
 
   }
@@ -201,7 +192,7 @@ export const useForgotPassword = () => {
       });
     } catch (error) {
       loading.value = false;
-      // error reporter
+      reporter(error);
     }
 
   }

@@ -52,7 +52,7 @@ async function getReviews(args: { productId: string; shopId: string; params: Par
     reviews.value = response.data.items;
     totalCount.value = response.data.count;
   } catch (err) {
-    //
+    // todo add a ui toaster
   } finally {
     loading.value = false;
   }

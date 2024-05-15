@@ -26,7 +26,7 @@ const onSubmit = async (
     await onRequestPassword(values.email);
     actions.resetForm();
   } catch (error) {
-    //
+    // todo add a ui toaster
   }
 };
 </script>
