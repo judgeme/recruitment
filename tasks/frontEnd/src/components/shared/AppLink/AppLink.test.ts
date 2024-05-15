@@ -13,7 +13,7 @@ describe('AppLink.vue', () => {
   it('renders external link correctly', () => {
     const wrapper = mount(AppLink, {
       props: {
-        to: 'http://external.com',
+        to: 'http://example.com',
       },
       slots: {
         default: '<span>External Link</span>',
@@ -26,7 +26,7 @@ describe('AppLink.vue', () => {
     // Check if the external link is rendered
     const aTag = wrapper.find('a');
     expect(aTag.exists()).toBe(true);
-    expect(aTag.attributes('href')).toBe('http://external.com');
+    expect(aTag.attributes('href')).toBe('http://example.com');
     expect(aTag.attributes('target')).toBe('_blank');
     expect(wrapper.html()).toMatchSnapshot();
   });
