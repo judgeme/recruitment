@@ -1,0 +1,25 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`AppButton.vue > applies variant classes correctly 1`] = `
+"<button class="py-3 px-6 md:px-9 border-2 border-transparent 
+  appearance-none font-inherit inline-block
+  align-middle outline-0 text-tiny 
+  tracking-compact font-bold uppercase 
+  transition-colors text-center cursor-pointer bg-secondary hover:bg-secondary/80 text-primary"></button>"
+`;
+
+exports[`AppButton.vue > renders as anchor element with correct props 1`] = `
+"<a class="py-3 px-6 md:px-9 border-2 border-transparent 
+  appearance-none font-inherit inline-block
+  align-middle outline-0 text-tiny 
+  tracking-compact font-bold uppercase 
+  transition-colors text-center cursor-pointer bg-primary hover:bg-black-80 text-white" href="/path"></a>"
+`;
+
+exports[`AppButton.vue > renders button element correctly with default props 1`] = `
+"<button class="py-3 px-6 md:px-9 border-2 border-transparent 
+  appearance-none font-inherit inline-block
+  align-middle outline-0 text-tiny 
+  tracking-compact font-bold uppercase 
+  transition-colors text-center cursor-pointer bg-primary hover:bg-black-80 text-white"></button>"
+`;

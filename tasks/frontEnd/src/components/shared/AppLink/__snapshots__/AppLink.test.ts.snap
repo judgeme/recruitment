@@ -1,0 +1,5 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`AppLink.vue > renders external link correctly 1`] = `"<a href="http://external.com" target="_blank"><span>External Link</span></a>"`;
+
+exports[`AppLink.vue > renders internal link correctly 1`] = `"<a href="/" class="inactive"><span>Internal Link</span></a>"`;
