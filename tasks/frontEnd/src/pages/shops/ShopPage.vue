@@ -1,0 +1,1 @@
+<template>shop page</template>
