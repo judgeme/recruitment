@@ -132,19 +132,19 @@ const onDeleteReview = async (reviewId: string) => {
 };
 </script>
 <template>
-  <div class="-mt-13 md:-mt-15">
+  <div class="-mt-13 lg:-mt-15">
     <ul class="max-w-screen-xl mx-auto px-6">
       <li>
-        <app-button type="button" class="h-auto leading-6 md:leading-[30px] md:h-15">Reviews</app-button>
+        <app-button type="button" class="h-auto leading-6 lg:leading-[30px] lg:h-15">Reviews</app-button>
       </li>
     </ul>
   </div>
   <app-activity-loader :loading="loading">
-    <div class="bg-white py-15 md:py-25 border-grey-60 border-b border-t">
+    <div class="bg-white py-15 lg:py-20 xl:py-25 border-grey-60 border-b border-t">
       <div class="max-w-screen-xl mx-auto px-6">
         <!-- filters -->
-        <div class="flex gap-6 justify-end px-0 mb-8 md:mb-10">
-          <div class="w-full md:w-50">
+        <div class="flex gap-6 justify-end px-0 mb-8 lg:mb-10">
+          <div class="w-full lg:w-50">
             <app-select
               aria-label="sort items"
               name="sort"

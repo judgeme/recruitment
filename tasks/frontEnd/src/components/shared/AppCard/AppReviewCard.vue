@@ -42,9 +42,9 @@ const onDeleteReview = (id: string) => {
 </script>
 <template>
   <div
-    class="flex flex-col md:flex-row justify-start gap-10 border-grey-60 last-of-type:border-0 last-of-type:pb-0 border-b py-0 md:py-6"
+    class="flex flex-col lg:flex-row justify-start gap-10 border-grey-60 last-of-type:border-0 last-of-type:pb-0 border-b py-0 lg:py-6"
   >
-    <div class="w-full md:w-60">
+    <div class="w-full lg:w-50 xl:w-60">
       <p class="text-sm text-primary font-medium mb-2 truncate" :title="reviewer.name">
         {{ reviewer.name }}
       </p>
@@ -73,7 +73,7 @@ const onDeleteReview = (id: string) => {
       </div>
     </div>
     <!-- rating and body -->
-    <div class="w-full md:w-100 max-w-100">
+    <div class="w-full lg:w-80 xl:w-100 max-w-100">
       <!-- stars -->
       <div class="mb-4">
         <app-rating :model-value="rating" disabled />
@@ -87,7 +87,7 @@ const onDeleteReview = (id: string) => {
         <li
           v-for="reviewImage in review.reviewImages"
           :key="reviewImage"
-          class="flex basis-full md:basis-1/4 items-center w-full md:w-25 h-40 md:h-25"
+          class="flex basis-full lg:basis-1/4 items-center w-full lg:w-25 h-40 lg:h-25"
         >
           <button
             class="bg-grey-60 h-full w-full border-grey-80 overflow-hidden"
