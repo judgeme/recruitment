@@ -1,64 +1,69 @@
-# judgeme
+# Judge.me Coding Challenge - Front-end Engineer
+Technical assessment for applications for the front-end Engineer role.  
+We ask that the task be completed using [Vue.js](https://vuejs.org/) as our existing front-end is written in it. We also utilise [Polaris Vue](https://ownego.github.io/polaris-vue/) to seamlessly integrate within Shopify. However, if you're not familiar or comfortable with Vue, we will accept submissions that do not use Vue.   
+This task is designed around a simple take on the interface reqwuired to enable management of review data. Please contain your code in this folder to ensure it can be reviewed easily.  
 
-This template should help get you started developing with Vue 3 in Vite.
+## Your task
+Create a simple [CRUD](https://en.wikipedia.org/wiki/Create,_read,_update_and_delete) Vue app that allows the management of product reviews for a store.  
 
-## Recommended IDE Setup
+- Feel free to use any libraries to help rapid development.
+- The app should be responsive, to allow for usage across desktop & mobile.
+- Users should be able to;
+    - Add reviews.
+    - View reviews.
+    - Update reviews.
+    - Delete reviews.
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+## API
+We'd like you to setup a mock RESTful API, providing JSON payloads. We suggest using [mockapi.io](https://mockapi.io/).
 
-## Type Support for `.vue` Imports in TS
-
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
-
-```sh
-npm install
+### Endpoints
+You should create the following endpoints to use in the web application.
+```
+GET    /reviews
+GET    /reviews/:id
+POST   /reviews
+PUT    /reviews/:id
+DELETE /reviews/:id
 ```
 
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
+### Data model
+The review data model should contain at least:
+```js
+{
+  shopName: String,
+  productName: String,
+  reviewer: {
+    name: String,
+    email: String
+  },
+  review: {
+    rating: Number,
+    reviewBody: String,
+    reviewImages: [String],
+    verifiedPurchase: Boolean
+  }
+}
 ```
 
-### Type-Check, Compile and Minify for Production
+## Bonus points
+On top of the basic requirements, you could also consider;
+- Documentation to aid future developers.
+- Pagination, sorting, searching & filtering.
+- Authentication.
+- Accessibility.
+- Caching.
+- Testing (perhaps running in CI).
+- Application performance.
+- Use of Polaris Vue.
+- Further optimisations.
 
-```sh
-npm run build
-```
-
-### Run Unit Tests with [Vitest](https://vitest.dev/)
-
-```sh
-npm run test:unit
-```
-
-### Run End-to-End Tests with [Playwright](https://playwright.dev)
-
-```sh
-# Install browsers for the first run
-npx playwright install
-
-# When testing on CI, must build the project first
-npm run build
-
-# Runs the end-to-end tests
-npm run test:e2e
-# Runs the tests only on Chromium
-npm run test:e2e -- --project=chromium
-# Runs the tests of a specific file
-npm run test:e2e -- tests/example.spec.ts
-# Runs the tests in debug mode
-npm run test:e2e -- --debug
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
+## Review
+when you have completed the task and shared it with us, we will review the PR and provide comments, questions and challenges that we invite you to respond to. We do this in place of another video call, as it's closer to real world working, but still allows an opportunity for you to discuss and explain your choices.  
+Some things to expect to be discussed include;
+- Browser compatibility.
+- Technology choices (including libraries & frameworks).
+- Approach to styling.
+- Code quality.
+- UI/UX choices.
+- Project setup and build steps etc.
