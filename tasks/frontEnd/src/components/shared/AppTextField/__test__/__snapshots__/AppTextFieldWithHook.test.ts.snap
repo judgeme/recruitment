@@ -5,7 +5,7 @@ exports[`AppTextFieldWithHook.vue > renders AppTextField with props and handles 
   <div class="mb-2.5 w-full">
     <div class="relative"><label class="block tracking-wide text-primary text-anchor font-medium mt-0 mb-1"><span class="text-ellipsis">Email</span>
         <!--v-if-->
-      </label><input class="appearance-none block w-full py-[15px] px-5 font-inherit font-light text-input text-primary bg-white border outline-0 transition-colors focus:bg-fairy placeholder:text-grey-40 disabled:cursor-not-allowed border-grey-60" name="email" type="email" autocomplete="off"></div>
+      </label><input class="appearance-none block w-full py-[15px] px-5 font-inherit font-light text-input text-primary bg-white border outline-0 transition-colors focus:bg-fairy placeholder:text-grey-deep disabled:cursor-not-allowed border-grey-60" name="email" type="email" autocomplete="off"></div>
     <!--v-if-->
   </div><button type="submit">Submit</button>
 </form>"

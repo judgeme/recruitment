@@ -20,7 +20,7 @@ describe('AppTextField.vue', () => {
     expect(input.classes()).toContain('border');
     expect(input.classes()).toContain('outline-0');
     expect(input.classes()).toContain('transition-colors');
-    expect(input.classes()).toContain('placeholder:text-grey-40');
+    expect(input.classes()).toContain('placeholder:text-grey-deep');
 
     // Check if default attributes are applied
     expect(input.attributes('type')).toBe('text');

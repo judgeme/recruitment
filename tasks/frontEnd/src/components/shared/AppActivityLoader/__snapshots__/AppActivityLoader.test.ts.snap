@@ -1,14 +1,14 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`AppActivityLoader.vue > renders correctly and matches snapshot when loading is false 1`] = `
-"<div class="relative w-full overflow-hidden min-h-50">
+"<div class="relative w-full overflow-hidden min-h-10">
   <!--v-if-->
   <p>Some default content here</p>
 </div>"
 `;
 
 exports[`AppActivityLoader.vue > renders correctly and matches snapshot when loading is true 1`] = `
-"<div class="relative w-full overflow-hidden min-h-50">
+"<div class="relative w-full overflow-hidden min-h-10">
   <div class="absolute inset-0 flex justify-center items-center z-10 bg-white/55"><span data-v-9e3594fe="" class="loader w-12 h-12 rounded-full inline-block relative border-solid border-[3px] border-t-primary border-r-primary border-b-transparent border-l-transparent after:absolute before:absolute after:inset-0 before:inset-0 after:m-auto before:m-auto after:border-solid after:border-[3px] before:border-solid before:border-[3px] after:border-t-transparent after:border-r-transparent after:border-b-primary after:border-l-primary after:w-10 after:h-10 after:rounded-full before:rounded-full before:w-8 before:h-8 before:border-t-primary before:border-r-primary before:border-b-transparent before:border-l-transparent animate-spin"></span></div>
   <p>Some default content here</p>
 </div>"

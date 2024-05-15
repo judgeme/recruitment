@@ -49,10 +49,45 @@ class ShopService extends HttpClient {
       resolve(response);
     });
   }
-  
+
+  async getShop(shopId: string) {
+    const cacheKey = JSON.stringify({
+      shopId,
+      key: 'SHOP_API'
+    });
+
+    // Check if data is already in localStorage
+    const record = localStorage.getItem(cacheKey);
+
+    // if there's a record use it 
+    if (record) {
+      const item = JSON.parse(record) as ShopModel;
+      const response = {
+        data: item,
+        status: 200,
+      } as AxiosResponse<ShopModel>;
+
+      return new Promise<AxiosResponse<ShopModel, any>>((resolve) => {
+        // add set time out to mimic normal request 
+        this.timeoutRef = setTimeout(() => {
+          resolve(response);
+        }, 1000);
+      });
+    }
+    // make api call if no existing data found
+    const response = await this.get<ShopModel>(`/shops/${shopId}`);
+
+    // save the new data to local storage
+    localStorage.setItem(cacheKey, JSON.stringify(response.data));
+
+    return new Promise<AxiosResponse<ShopModel, any>>((resolve) => {
+      resolve(response);
+    });
+  }
+
   // clear timeout to prevent leakage
   destroy() {
-    if(this.timeoutRef) {
+    if (this.timeoutRef) {
       clearTimeout(this.timeoutRef);
     }
   }

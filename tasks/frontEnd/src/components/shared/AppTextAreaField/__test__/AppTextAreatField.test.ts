@@ -20,7 +20,7 @@ describe('AppTextAreaField.vue', () => {
     expect(textarea.classes()).toContain('border');
     expect(textarea.classes()).toContain('outline-0');
     expect(textarea.classes()).toContain('transition-colors');
-    expect(textarea.classes()).toContain('placeholder:text-grey-40');
+    expect(textarea.classes()).toContain('placeholder:text-grey-deep');
 
     // Check if default attributes are applied
     expect(textarea.attributes('autocomplete')).toBe('off');

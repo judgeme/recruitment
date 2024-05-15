@@ -2,7 +2,7 @@
 
 exports[`AppTextField.vue > applies custom props and classes correctly 1`] = `
 "<div class="mb-2.5 w-full">
-  <div class="relative"><label class="block tracking-wide text-primary text-anchor font-medium mt-0 mb-1" for="test-id"><span class="text-ellipsis">Test Label</span><span class="whitespace-nowrap ml-1">*</span></label><input class="appearance-none block w-full py-[15px] px-5 font-inherit font-light text-input text-primary bg-white border outline-0 transition-colors focus:bg-fairy placeholder:text-grey-40 disabled:cursor-not-allowed border-danger !bg-fairy" id="test-id" required="" name="test-name" type="email" disabled="" autocomplete="off"></div>
+  <div class="relative"><label class="block tracking-wide text-primary text-anchor font-medium mt-0 mb-1" for="test-id"><span class="text-ellipsis">Test Label</span><span class="whitespace-nowrap ml-1">*</span></label><input class="appearance-none block w-full py-[15px] px-5 font-inherit font-light text-input text-primary bg-white border outline-0 transition-colors focus:bg-fairy placeholder:text-grey-deep disabled:cursor-not-allowed border-danger !bg-fairy" id="test-id" required="" name="test-name" type="email" disabled="" autocomplete="off"></div>
   <div role="alert" class="text-xs mt-0.5 text-danger italic">Helper Text</div>
 </div>"
 `;
@@ -10,7 +10,7 @@ exports[`AppTextField.vue > applies custom props and classes correctly 1`] = `
 exports[`AppTextField.vue > renders input element with default props 1`] = `
 "<div class="mb-2.5 w-full">
   <div class="relative">
-    <!--v-if--><input class="appearance-none block w-full py-[15px] px-5 font-inherit font-light text-input text-primary bg-white border outline-0 transition-colors focus:bg-fairy placeholder:text-grey-40 disabled:cursor-not-allowed border-grey-60" type="text" autocomplete="off">
+    <!--v-if--><input class="appearance-none block w-full py-[15px] px-5 font-inherit font-light text-input text-primary bg-white border outline-0 transition-colors focus:bg-fairy placeholder:text-grey-deep disabled:cursor-not-allowed border-grey-60" type="text" autocomplete="off">
   </div>
   <!--v-if-->
 </div>"

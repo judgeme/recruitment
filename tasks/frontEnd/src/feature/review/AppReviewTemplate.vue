@@ -135,7 +135,9 @@ const onDeleteReview = async (reviewId: string) => {
   <div class="-mt-13 lg:-mt-15">
     <ul class="max-w-screen-xl mx-auto px-6">
       <li>
-        <app-button type="button" class="h-auto leading-6 lg:leading-[30px] lg:h-15">Reviews</app-button>
+        <app-button type="button" class="h-auto leading-6 lg:leading-[30px] lg:h-15"
+          >Reviews</app-button
+        >
       </li>
     </ul>
   </div>
@@ -161,8 +163,11 @@ const onDeleteReview = async (reviewId: string) => {
             />
           </div>
         </div>
+        <div v-if="reviews.length === 0" class="text-primary text-tiny text-center">
+          No Reviews Added just yet
+        </div>
         <!-- reviews here -->
-        <div class="flex flex-col gap-10 mb-12">
+        <div v-else class="flex flex-col gap-10 mb-12">
           <app-review-card
             v-for="review in reviews"
             :key="review.id"
