@@ -14,7 +14,7 @@ defineOptions({
 
 const props = withDefaults(defineProps<WithHooksProps>(), {});
 
-const { value, errorMessage, handleBlur, handleChange } = useField<string>(
+const { value, errorMessage, handleBlur, handleChange } = useField<number>(
   () => props.name,
   undefined,
   {

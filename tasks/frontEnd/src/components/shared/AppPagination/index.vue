@@ -46,20 +46,20 @@ const lastPage = computed(() => paginationRange.value[paginationRange.value.leng
 
 const anchorClass = `
 	relative block bg-transparent 
-	px-3 py-1.5 text-sm text-primary 
+	px-5 md:px-3 py-5 md:py-1.5 text-sm text-primary 
 	transition-all duration-300 hover:bg-neutral-100 
 `;
 </script>
 <template>
   <nav v-show="showPagination" aria-label="pagination">
-    <ul class="list-style-none flex">
+    <ul class="list-style-none flex flex-wrap">
       <li @click="onPrevious">
         <button
           :class="[anchorClass, `${currentPage === 1 ? 'cursor-not-allowed' : ''}`]"
           aria-label="previous"
           :disabled="currentPage === 1"
         >
-          <span class="page-link">Previous</span>
+          <span class="page-link">{{ '<<' }}</span>
         </button>
       </li>
       <template v-for="pageNumber in paginationRange" :key="pageNumber">
@@ -83,7 +83,7 @@ const anchorClass = `
           :disabled="currentPage === lastPage"
           @click="onNext"
         >
-          Next
+          {{ '>>' }}
         </button>
       </li>
     </ul>

@@ -60,7 +60,7 @@ const modelValue = defineModel<string>({
         :name="name"
         :autocomplete="autoComplete"
         @blur="$emit('blur', $event)"
-        class="appearance-none block w-full py-[15px] px-5 font-inherit font-light text-input text-grey-40 bg-white border outline-0 transition-colors focus:bg-fairy"
+        class="appearance-none block w-full py-[15px] px-5 font-inherit font-light text-input text-grey-deep bg-white border outline-0 transition-colors focus:bg-fairy"
       >
         <slot>
           <option value="" selected class="opacity-10">{{ placeholder }}</option>

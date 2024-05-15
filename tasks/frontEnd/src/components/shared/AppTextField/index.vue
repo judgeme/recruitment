@@ -52,7 +52,7 @@ const computedClass = computed(() => {
     <input
       v-model="modelValue"
       v-bind="$attrs"
-      class="appearance-none block w-full py-[15px] px-5 font-inherit font-light text-input text-primary bg-white border outline-0 transition-colors focus:bg-fairy placeholder:text-grey-40 disabled:cursor-not-allowed"
+      class="appearance-none block w-full py-[15px] px-5 font-inherit font-light text-input text-primary bg-white border outline-0 transition-colors focus:bg-fairy placeholder:text-grey-deep disabled:cursor-not-allowed"
       :class="computedClass"
       :id="id"
       :required="required"

@@ -11,7 +11,7 @@ import { useSignOut } from '@/composables/useAuth';
 const linkClass = `
   flex text-black-70 text-link 
   font-bold uppercase tracking-2px 
-  m-0 hover:text-grey-40  
+  m-0 hover:text-grey-80  
   font-bold tracking-link
   no-underline inline-flex 
   items-center gap-1 transition-colors
@@ -64,10 +64,10 @@ watch(
           class="hidden md:flex flex-wrap md:justify-center p-0 m-0 list-none flex-row gap-5 md:gap-9 mb-5 md:mb-0"
         >
           <li class="flex justify-center text-center basis-full md:basis-auto">
-            <app-link to="/" :class="linkClass" active-class="!text-grey-40">Products</app-link>
+            <app-link to="/" :class="linkClass" active-class="!text-grey-80">Products</app-link>
           </li>
           <li class="flex justify-center text-center basis-full md:basis-auto">
-            <app-link to="/shops" :class="linkClass" active-class="!text-grey-40">Shops</app-link>
+            <app-link to="/shops" :class="linkClass" active-class="!text-grey-80">Shops</app-link>
           </li>
         </ul>
         <ul
@@ -79,6 +79,7 @@ watch(
               to="/"
               class="flex text-white hover:text-primary transition-colors text-2xl font-bold uppercase tracking-2px m-0 py-1.5px"
             >
+              <span class="sr-only">company logo</span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 xmlns:v="https://vecta.io/nano"
@@ -173,7 +174,7 @@ watch(
             <app-link
               :to="route.name === 'login' ? '/register' : '/login'"
               :class="linkClass"
-              active-class="!text-grey-40"
+              active-class="!text-grey-80"
             >
               {{ route.name === 'login' ? 'Sign Up' : 'Login' }}
             </app-link>

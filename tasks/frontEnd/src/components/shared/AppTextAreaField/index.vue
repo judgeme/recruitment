@@ -49,7 +49,7 @@ const modelValue = defineModel<string>();
         py-[15px] px-5 font-inherit font-light 
         text-input text-primary bg-white 
         border outline-0 transition-colors 
-        focus:bg-fairy placeholder:text-grey-40
+        focus:bg-fairy placeholder:text-grey-deep
         disabled:cursor-not-allowed
       "
       :class="invalid ? 'border-danger' : 'border-grey-60'"

@@ -27,11 +27,11 @@ defineOptions({
     <!-- media section -->
     <app-link
       :to="productUrl"
-      class="w-full block h-[380px] relative overflow-hidden"
+      class="w-full block h-[442px] lg:h-[353px] relative overflow-hidden"
       :title="productName"
     >
       <figure class="w-full h-full transition-all group-hover:opacity-70">
-        <img :src="imageUrl" class="w-full h-full block" :alt="productName" decoding="async" />
+        <img fetchpriority="high" :src="imageUrl" class="w-full h-full block" :alt="productName" decoding="async" />
       </figure>
       <div v-if="extras" class="absolute top-0 left-0 right-0 py-4 px-6 flex justify-between">
         <span class="text-primary text-tiny leading-6 tracking-[1px] font-medium">{{
@@ -60,7 +60,7 @@ defineOptions({
     <div class="relative w-full mt-6 px-6 text-center">
       <p class="uppercase text-sm tracking-double text-primary mb-2">{{ productName }}</p>
       <div
-        class="text-grey-80 text-sm transition-all md:opacity-100 md:group-hover:opacity-0 md:group-hover:translate-x-15"
+        class="text-grey-deep text-sm transition-all md:opacity-100 md:group-hover:opacity-0 md:group-hover:translate-x-15"
       >
         <bdi>
           <span>$</span>
@@ -70,7 +70,7 @@ defineOptions({
       <div
         class="font-semibold md:absolute md:bottom-0 md:left-1/2 transition-all md:opacity-0 md:group-hover:opacity-100 md:group-hover:-translate-x-1/2 md:-translate-x-full"
       >
-        <app-link :to="shopUrl" class="text-xs uppercase text-grey-80 transition-colors"
+        <app-link :to="shopUrl" class="text-xs uppercase text-primary/75 transition-colors"
           >Visit Store</app-link
         >
       </div>
