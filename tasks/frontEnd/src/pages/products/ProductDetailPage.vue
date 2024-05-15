@@ -49,9 +49,9 @@ const onHideReviewModal = () => {
   <div class="bg-fairy flex items-center justify-center">
     <app-activity-loader :loading="loading">
       <div
-        class="max-w-screen-xl mx-auto px-6 pt-25 pb-40 flex justify-between items-center gap-40"
+        class="max-w-screen-xl mx-auto px-6 pt-6 md:pt-25 pb-[92px] md:pb-40 flex flex-col md:flex-row justify-between items-center gap-10 md:gap-40"
       >
-        <figure class="w-[530px] h-[530px] overflow-hidden">
+        <figure class="w-full md:w-[530px] h-100 md:h-[530px] overflow-hidden">
           <img
             :src="product?.imageUrl"
             class="w-full h-full block"
@@ -61,7 +61,7 @@ const onHideReviewModal = () => {
         </figure>
         <div class="flex-1">
           <h1 class="text-primary text-heading-3 font-bold mb-2">{{ product?.name }}</h1>
-          <p class="text-primary text-lg mb-15">
+          <p class="text-primary text-lg mb-8 md:mb-15">
             <bdi>
               <span>$</span>
               {{ product?.price }}

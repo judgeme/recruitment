@@ -31,7 +31,7 @@ const props = withDefaults(defineProps<Props>(), {
 const { disabled, variant, fullWidth, loading } = toRefs(props);
 
 const buttonClass = `
-  py-3 px-9 border-2 border-transparent 
+  py-3 px-6 md:px-9 border-2 border-transparent 
   appearance-none font-inherit inline-block
   align-middle outline-0 text-tiny 
   tracking-compact font-bold uppercase 
