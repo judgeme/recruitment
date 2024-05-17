@@ -69,7 +69,7 @@ const onSubmit = async (
           class="block text-primary font-light text-anchor capitalize transition-colors mt-6 mb-3"
           >lost your password?</app-link
         >
-        <app-button class="mt-4" fullWidth :disabled="!meta.valid">Login</app-button>
+        <app-button class="mt-4" fullWidth :disabled="!meta.valid" type="submit">Login</app-button>
       </app-form>
       <div class="my-10 relative">
         <span

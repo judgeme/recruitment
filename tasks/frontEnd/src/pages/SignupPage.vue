@@ -63,25 +63,30 @@ const onSubmit = async (
           placeholder="Password"
           required
         />
-        <app-button class="mt-4" fullWidth :disabled="!meta.valid">Sign up</app-button>
+        <app-button class="mt-4" fullWidth :disabled="!meta.valid" type="submit"
+          >Sign up</app-button
+        >
       </app-form>
       <div class="my-10 relative">
         <span
-          class="absolute inline-block text-sm bg-white px-3 left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2"
+          class="absolute inline-block text-sm bg-white px-3 
+          left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2"
           >Or</span
         >
         <hr class="bg-grey-light" />
       </div>
       <div class="flex gap-4 justify-center">
         <button
-          class="rounded-full border-grey-light border p-2 inline-flex transition-colors items-center justify-center hover:bg-fairy scale-105"
+          class="rounded-full border-grey-light border p-2 inline-flex 
+          transition-colors items-center justify-center hover:bg-fairy scale-105"
           @click="onAuthApp"
         >
           <span class="sr-only">Sign In using Github</span>
           <app-icon :size="24" icon="github" />
         </button>
         <button
-          class="rounded-full border-grey-light border p-2 inline-flex transition-colors items-center justify-center hover:bg-fairy scale-105"
+          class="rounded-full border-grey-light border p-2 inline-flex 
+          transition-colors items-center justify-center hover:bg-fairy scale-105"
           @click="onAuthAppGoogle"
         >
           <span class="sr-only">Sign In using Google</span>
