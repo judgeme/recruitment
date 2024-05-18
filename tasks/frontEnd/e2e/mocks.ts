@@ -3,7 +3,7 @@ export const MOCKED_LOGIN_RESPONSE = {
   "localId": "Fbr4AM1MBZePnM5s9GypMfwt0bC2",
   "email": "tester@samsoniyanda.com",
   "displayName": "Samson Iyanda",
-  "idToken": "eyJhbGciOiJSUzI1NiIsImtpZCI6ImUy",
+  "idToken": "somerandomtextsomerandomtext",
   "registered": true,
   "refreshToken": "AMf-vBxGDVdJ169LjIyirnReKGpO",
   "expiresIn": "3600"
@@ -11,7 +11,7 @@ export const MOCKED_LOGIN_RESPONSE = {
 
 export const MOCKED_SIGNUP_RESPONSE = {
   "kind": "identitytoolkit#SignupNewUserResponse",
-  "idToken": "eyJhbGciOiJSUzI1NiIsImtpZCI6ImUyYjIyZmQ0N2VkZT",
+  "idToken": "somerandomtextsomerandomtext",
   "email": "tester@samsoniyanda.com",
   "refreshToken": "AMf-vBxeYWr2MEAqQiRARM9r_",
   "expiresIn": "3600",
@@ -23,7 +23,7 @@ export const MOCKED_ACCOUNT_LOOK_UP_RESPONSE = {
   "users": [
     {
       "localId": "0RUmyMP4b4PfhJaoxV5cr8ehDNx1",
-      "email": "samsoniyanda@outlook.com",
+      "email": "tester@samsoniyanda.com",
       "displayName": "Samson Iyanda",
       "passwordHash": "UkVEQUNURUQ=",
       "emailVerified": true,
@@ -32,9 +32,9 @@ export const MOCKED_ACCOUNT_LOOK_UP_RESPONSE = {
         {
           "providerId": "password",
           "displayName": "Samson Iyanda",
-          "federatedId": "samsoniyanda@outlook.com",
-          "email": "samsoniyanda@outlook.com",
-          "rawId": "samsoniyanda@outlook.com"
+          "federatedId": "tester@samsoniyanda.com",
+          "email": "tester@samsoniyanda.com",
+          "rawId": "tester@samsoniyanda.com"
         }
       ],
       "validSince": "1715853708",

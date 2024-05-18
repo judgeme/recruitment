@@ -96,7 +96,7 @@ onUnmounted(() => {
 <template>
   <div class="max-w-screen-xl px-6 mx-auto mt-20">
     <!-- filters -->
-    <div class="flex gap-6 justify-end px-6 md:p-0 mb-10">
+    <div class="flex gap-6 justify-end mb-10">
       <div class="w-1/2 md:w-50">
         <app-text-field
           aria-label="search items"

@@ -12,7 +12,6 @@ import {
   type Unsubscribe
 } from "firebase/auth";
 import { useFirebaseAuth } from "vuefire";
-import type { FirebaseError } from "firebase/app";
 import { useRoute, useRouter } from 'vue-router';
 import reporter from '@/utils/reporter';
 

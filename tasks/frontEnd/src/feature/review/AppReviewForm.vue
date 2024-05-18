@@ -124,7 +124,7 @@ const onSubmit = async (
     @hide="onHide"
   >
     <app-activity-loader :loading="loading" data-non-active="true">
-      <app-card class="max-w-[60%] max-h-[500px] mx-auto overflow-auto p-15">
+      <app-card class="md:max-w-[60%] max-h-[500px] mx-auto overflow-auto p-15">
         <p class="text-xl text-primary mb-10 font-semibold">
           {{ mode === 'add' ? 'Add Review' : 'Edit Review' }}
         </p>
@@ -134,7 +134,7 @@ const onSubmit = async (
           :validation-schema="validationSchema"
           #default="{ meta, resetForm }"
         >
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <app-text-field-with-hook
               id="shopName"
               label="Shop Name"
@@ -179,7 +179,7 @@ const onSubmit = async (
               name="review.rating"
               required
             />
-            <div class="grid grid-cols-3 gap-6 mt-6 mb-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6 mb-6">
               <app-text-field-with-hook
                 id="reviewTitle"
                 label="Review Title"
@@ -215,11 +215,15 @@ const onSubmit = async (
               rows="4"
             />
           </div>
-          <div class="flex justify-end gap-6 mt-10">
-            <app-button class="mt-4" :disabled="!meta.valid">
+          <div class="flex flex-wrap justify-end gap-2 md:gap-6 mt-10">
+            <app-button class="mt-4 basis-full md:basis-auto" :disabled="!meta.valid">
               {{ mode === 'add' ? 'Submit Review' : 'Edit Review' }}
             </app-button>
-            <app-button variant="danger" class="mt-4" type="button" @click="onRestForm(resetForm)"
+            <app-button
+              variant="danger"
+              class="mt-4 basis-full md:basis-auto"
+              type="button"
+              @click="onRestForm(resetForm)"
               >reset</app-button
             >
           </div>
