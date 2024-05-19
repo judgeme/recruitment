@@ -101,4 +101,40 @@ bin/webpack-dev-server
 
 If you have any question or need to clarify the requirements, feel free to talk to us (via GitHub Issue, or via email).
 
+## Possible issues
+If you're having issues with installing Ruby 3.1, try installing with SSL 3 https://github.com/rbenv/ruby-build/discussions/2053#discussioncomment-6725967
+
+```rvm install ruby-3.1.0 --with-openssl-dir=$(brew --prefix openssl@3```
+
+---
+
+If you're running into node-sass issues, you may need to upgrade Webpacker as there may be a dependency there that is failing and we'd rather update Webpacker than downgrade Node.
+https://stackoverflow.com/questions/60394291/error-node-modules-node-sass-command-failed
+
+```yarn add @rails/webpacker```
+
+---
+
+If you're running into `uninitialized class variable @@schemes in URI` errors, you may need to update globalid
+
+```
+gem 'globalid', '~> 1.0'
+bundle install
+```
+---
+
+If you're running into `no implicit conversion of String into Integer (TypeError)` errors you may need to update bootsnap https://github.com/rails/rails/issues/36970
+
+```bundle update bootsnap```
+
+---
+
+If you can't connect to Postgres or Redis you may need to install/start these services
+```
+brew services start postgresql
+brew install redis
+brew services start redis
+```
+
+
 **Good luck and happy coding!**
