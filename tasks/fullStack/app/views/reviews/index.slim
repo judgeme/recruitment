@@ -8,6 +8,8 @@
     .product-reviews(style="flex: 1; padding: 20px;")
       - item[:reviews].each do |review|
         .review(style="border-bottom: 1px solid #ddd; padding-bottom: 5px; margin-bottom: 10px;")
+          .user
+            = review[:reviewer_name] || "Anonymous"
           .header(style=" display: flex; align-items: center;")
             .rating(style="display: flex; align-items: center;")
               - 5.times do |i|
