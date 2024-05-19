@@ -1,8 +1,14 @@
-- @data.each do |datum|
-  .product-title
-    | Product #{datum[:product].title}
+- @data.each do |product|
+  h1
+    | Product #{product.title}
 
-  - datum[:reviews].each do |review|
+  div
+    = link_to "Add Review", new_review_path(product_id: product.id)
+
+  - product.reviews.each do |review|
     .rating
       | Rating #{review.rating}
     p.body == review.body
+    hr
+
+= pagy_nav(@pagy).html_safe
