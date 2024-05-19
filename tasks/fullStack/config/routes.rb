@@ -5,4 +5,6 @@ Rails.application.routes.draw do
 
   resources :reviews, only: [:index, :create] do
   end
+
+  resources :products, only: [:index]
 end
