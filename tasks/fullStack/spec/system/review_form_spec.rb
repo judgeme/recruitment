@@ -15,6 +15,14 @@ RSpec.describe "Review form", type: :system do
 
       expect(page).to have_text('My Cool Shop')
       expect(page).to have_text('My Cool Product')
+
+      choose '3'
+      fill_in 'Name', with: 'Gareth'
+      fill_in 'Review', with: 'Very cool product!'
+
+      expect(CreateReviewWorker).to receive(:perform_async)
+
+      click_on 'Submit Review'
     end
   end
 end
