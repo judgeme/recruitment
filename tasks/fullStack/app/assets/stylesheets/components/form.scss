@@ -1,0 +1,36 @@
+@import "config/colours";
+
+label {
+  color: $grey;
+}
+
+input[type=text],
+textarea {
+  padding: .5rem;
+
+  border: .075rem solid $medium-tint;
+  border-radius: 0;
+}
+
+textarea {
+  font-family: inherit;
+}
+
+input[type=submit] {
+  padding: .75rem 2.5rem;
+
+  border: none;
+  border-radius: .6em;
+
+  font-weight: bold;
+  color: $white;
+  background: $blue;
+}
+
+.textarea--tall {
+  height: 15em;
+}
+
+::placeholder {
+  color: $light-grey;
+}

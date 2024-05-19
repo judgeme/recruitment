@@ -85,6 +85,8 @@ GEM
     erubi (1.12.0)
     et-orbi (1.2.4)
       tzinfo
+    factory_bot (6.4.6)
+      activesupport (>= 5.0.0)
     faker (2.17.0)
       i18n (>= 1.6, < 2)
     ffi (1.15.0)
@@ -264,6 +266,7 @@ DEPENDENCIES
   byebug
   capybara (>= 3.26)
   colorize
+  factory_bot
   faker
   jbuilder (~> 2.7)
   listen (~> 3.3)

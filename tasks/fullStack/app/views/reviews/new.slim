@@ -1,0 +1,31 @@
+== form_with(model: product.reviews.new, class: 'review-form') do |f|
+  == f.hidden_field :product_id
+
+  dl.review-form__detail-list
+    .review-form__detail
+      dt Shop Name:
+      dd = product.shop.name
+
+    .review-form__detail
+      dt Product Name:
+      dd = product.title
+
+  .review-form__field
+    == f.label :rating
+    div == f.collection_radio_buttons :rating, 1..5, :itself, :itself do |b|
+      == b.radio_button required: true
+      == b.label
+
+  .review-form__field
+    == f.label :reviewer_name, 'Name'
+    == f.text_field :reviewer_name, required: true, placeholder: 'Enter your name'
+
+  .review-form__field
+    == f.label :body, 'Review'
+    == f.text_area :body,
+                   required: true,
+                   placeholder: 'Write your reviews here',
+                   class: 'textarea--tall'
+
+  div
+    == f.submit 'Submit Review'

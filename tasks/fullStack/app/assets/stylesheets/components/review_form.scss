@@ -1,0 +1,52 @@
+@import "config/colours";
+
+.review-form {
+
+  max-width: 50rem;
+  font-size: .9rem;
+
+  margin: 0 auto;
+  padding: 1.2rem;
+  border: .075rem solid $medium-tint;
+
+  background: $light-tint;
+
+  gap: 1.4rem;
+
+  &, &__field, &__detail {
+    display: flex;
+    flex-direction: column;
+  }
+
+
+  &__field {
+    gap: .3rem;
+  }
+
+
+  &__detail-list {
+    display: flex;
+    margin: 0;
+  }
+
+  &__detail {
+    gap: .75rem;
+    flex-grow: 1;
+  }
+
+  dd {
+    margin: 0;
+    font-weight: bold;
+  }
+
+  dt {
+    color: $grey;
+  }
+
+
+  textarea {
+    height: 15em;
+    resize: none;
+  }
+
+}

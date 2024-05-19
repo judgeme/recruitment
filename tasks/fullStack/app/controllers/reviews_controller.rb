@@ -2,6 +2,8 @@ class ReviewsController < ApplicationController
 
   DEFAULT_TAGS = ['default']
 
+  helper_method :product
+
   def index
     if params[:shop_id].present? && Shop.where("id = #{params[:shop_id]}").present?
       params[:per_page] ||= 10
@@ -16,6 +18,9 @@ class ReviewsController < ApplicationController
     end
   end
 
+  def new
+  end
+
   def create
     # TODO: Create reviews in background. No need to show errors (if any) to users, it's fine to skip creating the review silently when some validations fail.
 
@@ -27,6 +32,10 @@ class ReviewsController < ApplicationController
   end
 
   private
+
+  def product
+    @product ||= Product.find(params[:product_id])
+  end
 
   # Prepend `params[:tags]` with tags of the shop (if present) or DEFAULT_TAGS
   # For simplicity, let's skip the frontend for `tags`, and just assume frontend can somehow magically send to backend `params[:tags]` as a comma-separated string
