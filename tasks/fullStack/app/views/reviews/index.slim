@@ -9,7 +9,11 @@
       - item[:reviews].each do |review|
         .review(style="border-bottom: 1px solid #ddd; padding-bottom: 5px; margin-bottom: 10px;")
           .rating
-            = "Rating: #{review[:rating]}"
+            - 5.times do |i|
+              - if i < review[:rating]
+                span(style="color: gold;") &#9733;
+              - else
+                span(style="color: lightgray;") &#9734;
           .body
             = review[:body]
           .reviewer-name(style="font-style: italic;")
