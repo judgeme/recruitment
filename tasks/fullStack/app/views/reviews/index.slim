@@ -1,8 +1,3 @@
-- @data.each do |datum|
-  .product-title
-    | Product #{datum[:product].title}
+== render partial: 'product', collection: reviewed_products
 
-  - datum[:reviews].each do |review|
-    .rating
-      | Rating #{review.rating}
-    p.body == review.body
+.text-align--center == will_paginate reviewed_products

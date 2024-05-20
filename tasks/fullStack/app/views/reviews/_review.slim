@@ -1,0 +1,10 @@
+.review
+  p = review.reviewer_name
+
+  p
+    span.review__stars => rating(review)
+    ' &bull;
+    => time_ago_in_words review.created_at
+    | ago
+
+  == simple_format review.body

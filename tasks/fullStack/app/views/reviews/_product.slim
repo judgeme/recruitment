@@ -1,0 +1,5 @@
+.reviewed-product
+  h2 = product.title
+
+  .review-list
+    == render partial: 'review', collection: recent_reviews_for(product)
