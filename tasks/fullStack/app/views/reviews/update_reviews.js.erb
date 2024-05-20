@@ -1,0 +1,4 @@
+var productId = "<%= @product.id %>";
+var reviewsHtml = "<%= j render(partial: 'reviews', locals: { reviews: @reviews }) %>";
+var reviewsContainer = document.getElementById("reviews-" + productId);
+reviewsContainer.innerHTML = reviewsHtml;

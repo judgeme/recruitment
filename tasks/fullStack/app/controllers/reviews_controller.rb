@@ -1,6 +1,7 @@
 class ReviewsController < ApplicationController
 
   DEFAULT_TAGS = ['default']
+  REVIEWS_PER_PAGE = 3
 
   def index
     params[:per_page] ||= 10
@@ -16,8 +17,19 @@ class ReviewsController < ApplicationController
     products = products_query.includes(:reviews).limit(params[:per_page]).offset(offset)
 
     products.each do |product|
-      reviews = product.reviews.order(created_at: :desc).limit(params[:per_page]).offset(offset)
-      @data << { product: product, reviews: reviews }
+      product_reviews_page_data = params[:product_reviews_page_data] || {}
+      page = product_reviews_page_data[product.id.to_s]&.to_i || 1
+      reviews = product.reviews.order(created_at: :desc).limit(REVIEWS_PER_PAGE).offset((page.to_i - 1) * REVIEWS_PER_PAGE)
+      @data << { product: product, reviews: reviews, total_pages: (product.reviews.size/REVIEWS_PER_PAGE).ceil, page: page }
+    end
+  end
+
+  def update_reviews
+    @product = Product.find(params[:id])
+    page = params[:page].to_i
+    @reviews = @product.reviews.order(created_at: :desc).limit(REVIEWS_PER_PAGE).offset((page - 1) * REVIEWS_PER_PAGE)
+    respond_to do |format|
+      format.js
     end
   end
 
