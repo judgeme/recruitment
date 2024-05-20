@@ -33,14 +33,21 @@ class ReviewsController < ApplicationController
     end
   end
 
-  def create
-    # TODO: Create reviews in background. No need to show errors (if any) to users, it's fine to skip creating the review silently when some validations fail.
+  def new
+    @review = Review.new
+    @shops = Shop.all
+  end
 
-    tags = tags_with_default(params)
-    Review.create(product_id: params[:product_id], body: params[:body], rating: params[:rating], reviewer_name: params[:reviewer_name], tags: tags)
+  def create
+    ::CreateReviewWorker.perform_async(
+      review_params[:rating],
+      review_params[:body],
+      review_params[:reviewer_name],
+      review_params[:product_id]
+    )
 
     flash[:notice] = 'Review is being created in background. It might take a moment to show up'
-    redirect_to action: :index, shop_id: Product.find_by(id: params[:product_id]).shop_id
+    redirect_to action: :index
   end
 
   private
@@ -58,4 +65,7 @@ class ReviewsController < ApplicationController
     default_tags.concat(params[:tags].split(',')).uniq
   end
 
+  def review_params
+    params.require(:review).permit(:rating, :body, :reviewer_name, :product_id, :shop_id, :tags)
+  end
 end

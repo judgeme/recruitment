@@ -43,3 +43,42 @@ document.addEventListener("turbolinks:load", function () {
     });
   });
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+  const productSelect = document.getElementById('product-select');
+
+  if (!productSelect) {
+    return;
+  }
+
+  const searchInput = document.createElement('input');
+  searchInput.type = 'text';
+  searchInput.placeholder = 'Search for a product';
+  searchInput.id = 'product-search';
+  productSelect.parentNode.insertBefore(searchInput, productSelect);
+
+  let timeout = null;
+
+  searchInput.addEventListener('input', function () {
+    clearTimeout(timeout);
+    timeout = setTimeout(function () {
+      const query = searchInput.value.trim();
+      if (query.length > 4) {
+        fetch(`/products/search?q=${encodeURIComponent(query)}`)
+          .then(response => response.json())
+          .then(data => {
+            productSelect.innerHTML = '<option value="">Select a Product</option>';
+            data.items.forEach(product => {
+              const option = document.createElement('option');
+              option.value = product.id;
+              option.textContent = product.title;
+              productSelect.appendChild(option);
+            });
+          })
+          .catch(error => console.error('Error fetching products:', error));
+      } else {
+        productSelect.innerHTML = '<option value="">Select a Product</option>';
+      }
+    }, 300);
+  });
+});
