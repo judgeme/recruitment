@@ -1,0 +1,8 @@
+ul
+  - recent_stats.each do |(first_month, second_month), change|
+    li
+      => month_name(first_month)
+      ' to
+      = month_name(second_month)
+      ' :
+      = change

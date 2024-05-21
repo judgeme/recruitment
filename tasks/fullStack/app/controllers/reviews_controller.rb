@@ -1,6 +1,6 @@
 class ReviewsController < ApplicationController
 
-  helper_method :product
+  helper_method :shop, :product
 
   def index
   end
@@ -14,7 +14,14 @@ class ReviewsController < ApplicationController
     redirect_to action: :index, shop_id: product.shop_id
   end
 
+  def stats
+  end
+
   private
+
+  def shop
+    @shop ||= Shop.find(params[:shop_id])
+  end
 
   def product
     @product ||= Product.find(params[:product_id] || create_params[:product_id])

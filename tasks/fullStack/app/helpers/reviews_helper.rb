@@ -1,5 +1,13 @@
 module ReviewsHelper
 
+  def month_name(month)
+    Date::MONTHNAMES[month]
+  end
+
+  def recent_stats
+    ShopRatingsCalculator.new(shop: shop).recent_monthly_changes(2)
+  end
+
   def rating(review)
     '&#9733;'.html_safe*review.rating.to_i
   end
