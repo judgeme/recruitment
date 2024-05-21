@@ -7,4 +7,7 @@ Rails.application.routes.draw do
   end
 
   resources :products, only: [:index]
+  resources :products, only: [:index] do
+    resources :reviews, only: %i[index new create], module: :products
+  end
 end
