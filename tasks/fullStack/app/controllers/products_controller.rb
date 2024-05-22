@@ -3,7 +3,7 @@
 class ProductsController < ApplicationController
   def index
     @q = Product.ransack(params[:q])
-    pagy, products = pagy(@q.result(distinct: true), items: 10)
+    pagy, products = pagy(@q.result(distinct: true), items: 2)
 
     render locals: {
       shops: shops,
