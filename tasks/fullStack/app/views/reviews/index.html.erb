@@ -1,0 +1,33 @@
+<div>
+  <%= search_form_for(@q) do |f| %>
+    <%= f.label(:by_shop, "Filter by Shop") %>
+    <%= f.collection_select(
+    :by_shop,
+    shops,
+    :id,
+    :name,
+    { include_blank: true },
+    { class: "", onchange: "this.form.submit()" }
+  ) %>
+<% end %>
+</div>
+
+<div>
+  <% reviews.each do |review| %>
+    <div class="product-title">
+      <%= "Product #{review.product.title}" %>
+    </div>
+
+    <div class="rating">
+      <%= "Rating #{review.rating}" %>
+    </div>
+
+    <div>
+      <p class="body"><%= review.body %></p>
+    </div>
+  <% end %>
+</div>
+
+<div>
+  Pages: <%== pagy_nav(pagy) %>
+</div>

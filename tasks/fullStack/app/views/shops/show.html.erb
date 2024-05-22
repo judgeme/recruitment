@@ -1,0 +1,29 @@
+<h2>
+  <%= shop.name %>
+</h2>
+
+<p>
+  Average rating overall: <%= avg_rating(shop) %>
+</p>
+
+<p>
+  Average rating in <%= month_to_s(months_ago: 1) %>: <%= avg_rating_until(shop, months_ago: 1) %>
+</p>
+
+<p>
+Average rating in <%= month_to_s(months_ago: 2) %>: <%= avg_rating_until(shop, months_ago: 2) %>
+</p>
+
+<p>
+  Average rating in <%= month_to_s(months_ago: 3) %>: <%= avg_rating_until(shop, months_ago: 3) %>
+</p>
+
+<p>
+  From <%= month_to_s(months_ago: 3) %> to <%= month_to_s(months_ago: 2) %>
+  <%= sprintf("%+f", avg_rating_until(shop, months_ago: 2) - avg_rating_until(shop, months_ago: 3)) %>
+</p>
+
+<p>
+  From <%= month_to_s(months_ago: 2) %> to <%= month_to_s(months_ago: 1) %>
+  <%= sprintf("%+f", avg_rating_until(shop, months_ago: 1) - avg_rating_until(shop, months_ago: 2)) %>
+</p>
