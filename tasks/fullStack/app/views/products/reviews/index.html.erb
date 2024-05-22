@@ -1,2 +1,7 @@
-<h1>Products::Reviews#index</h1>
-<p>Find me in app/views/products/reviews/index.html.erb</p>
+<div class="max-w-4xl mx-auto py-8">
+  <% reviews.each do |review| %>
+    <%= render partial: review, locals: { review: review } %>
+  <% end %>
+  <%= pagy_info(pagy).html_safe %>
+  <%= pagy_nav(pagy).html_safe %>
+</div>
