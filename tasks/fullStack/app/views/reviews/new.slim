@@ -1,0 +1,26 @@
+h1 New Review
+
+= form_with(model: @review, local: true) do |form|
+  .field
+    = form.label :shop_id, 'Shop'
+    = form.collection_select :shop_id, @shops, :id, :name, prompt: 'Select a Shop'
+
+  .field
+    = form.label :product_id, 'Product'
+    select#product-select name="review[product_id]" class="product-select"
+      option value="" Select a Product
+
+  .field
+    = form.label :rating, 'Rating'
+    = form.select :rating, options_for_select((1..5).map { |i| [i.to_f, i.to_f] }), prompt: 'Select a Rating'
+
+  .field
+    = form.label :body, 'Review'
+    = form.text_area :body
+
+  .field
+    = form.label :reviewer_name, 'Name'
+    = form.text_field :reviewer_name
+
+  .actions
+    = form.submit 'Create Review'
