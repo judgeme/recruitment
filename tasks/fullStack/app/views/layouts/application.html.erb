@@ -6,11 +6,16 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+
+    <%= stylesheet_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-    <%= yield %>
+  <body class="antialiased m-auto min-h-screen">
+    <div class="p-6">
+      <%= yield %>
+    </div>
   </body>
 </html>

@@ -1,0 +1,25 @@
+<div class="bg-white shadow-md rounded-lg p-6 mb-6">
+  <div class="font-semibold mb-2">
+    <% if review.reviewer_name? %>
+      <%= review.reviewer_name %>
+    <% else %>
+      <span class="italic text-gray-500">Reviewer name not available</span>
+    <% end %>
+  </div>
+
+  <div class="flex gap-2">
+  <div class="text-yellow-500 mb-2">
+    <%= "Rating #{review.rating}" %>
+  </div>
+
+  <div class="text-gray-400 text-sm mb-4">
+    <%= time_ago_in_words(review.created_at) %> ago
+  </div>
+  </div>
+
+  <div>
+    <p class="text-lg text-gray-800">
+      <%= review.body %>
+    </p>
+  </div>
+</div>
