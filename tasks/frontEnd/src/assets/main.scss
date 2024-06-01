@@ -1,0 +1,18 @@
+@import './base.scss';
+
+#app {
+  width: 100vw;
+  font-weight: normal;
+}
+
+
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+span.Polaris-Text--root.Polaris-Text--medium.Polaris-Text--bodySm {
+  display: flex;
+  align-items: center;
+}
