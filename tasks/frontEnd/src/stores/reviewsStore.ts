@@ -33,6 +33,8 @@ export const useReviewsStore = defineStore('reviews-store', () => {
   const loading = ref(true)
   const errMsg = ref('')
 
+
+  // Getters
   const sorted = computed(() =>
     reviews.value.sort(
       (a, b) => new Date(b.review.date).getTime() - new Date(a.review.date).getTime()

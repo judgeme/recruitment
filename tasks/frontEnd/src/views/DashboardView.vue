@@ -1,47 +1,11 @@
-<template>
-  <Box paddingBlock="400" class="header">
-    <div style="display: flex; align-items: center; gap: 10px">
-      <Text variant="headingLg" as="h1"> Reviews Dashboard </Text>
-      <router-view v-if="$route.path === '/reviews'">
-        <Badge variant="" as="h1">
-          {{ startIndex }}-{{ endIndex }} of {{ reviews.length }} Reviews</Badge
-        >
-      </router-view>
-      <router-view v-if="$route.path === '/published-reviews'">
-        <Badge
-          variant=""
-          as="h1"
-          :tone="reviewsStore.published.length > 0 ? 'success' : 'attention'"
-          size="large"
-          >{{ reviewsStore.published.length }} Published Reviews</Badge
-        >
-      </router-view>
-      <router-view v-if="$route.path === '/store-reviews'">
-        <Badge variant="" as="h1" tone="attention" size="large">0 Store Reviews</Badge>
-      </router-view>
-    </div>
-    <RouterLink to="/new-review">
-      <Button class="button" accessibilityLabel="Write a Product Review">
-        Create a Product Review &nbsp;<IconWrite />
-      </Button>
-    </RouterLink>
-  </Box>
-
-  <LegacyCard>
-    <div v-if="reviewsStore.reviewCount">
-      <Tabs :tabs="tabs" :selected="selected" @select="handleTabChange"> </Tabs>
-    </div>
-    <div v-else><SkeletonTabs :count="tabs.length" /></div>
-    <router-view></router-view>
-  </LegacyCard>
-</template>
-
 <script setup lang="ts">
 import { useReviewsStore } from '@/stores/reviewsStore'
 import { computed, onMounted, ref, watch } from 'vue'
-import { RouterView, useRouter } from 'vue-router'
+import { useRouter, useRoute } from 'vue-router'
+import Reviews from '@/components/ReviewsList.vue'
 
 const router = useRouter()
+const route = useRoute()
 
 const reviewsStore = useReviewsStore()
 
@@ -91,7 +55,6 @@ const selected = ref(0)
 const handleTabChange = (selectedTabIndex: number) => {
   selected.value = selectedTabIndex
   const selectedTab = tabs[selectedTabIndex]
-
   router.push(selectedTab.to)
 }
 
@@ -111,24 +74,15 @@ const tabs = [
     get badge() {
       return reviewsStore.published.length
     },
+    accessibilityLabel: 'Published Reviews',
     to: '/published-reviews'
-  },
-  {
-    id: 'store-reviews',
-    content: 'Store Reviews',
-    get badge() {
-      return 0
-    },
-    to: '/store-reviews'
   }
 ]
 
 const ITEMS_PER_PAGE = 10
 
 const currentPage = ref(1)
-
 const totalPages = ref(0)
-
 const displayedReviews = ref<ReviewItem[]>([])
 
 const calculateDisplayedReviews = () => {
@@ -149,7 +103,50 @@ calculateDisplayedReviews()
 
 const startIndex = computed(() => (currentPage.value - 1) * ITEMS_PER_PAGE + 1)
 const endIndex = computed(() => Math.min(currentPage.value * ITEMS_PER_PAGE, reviews.value.length))
+
+
+
+
+const showPublished = computed(() => route.path === '/published-reviews')
+
+const allReviewsBadgeTone = computed(() => {
+  return showPublished.value ? (reviewsStore.published.length > 0 ? 'success' : 'attention') : undefined;
+});
+
+const showBadgeText = computed(() => {
+  if (showPublished.value) {
+    return `${reviewsStore.published.length} Published Reviews`
+  } else {
+    return `${startIndex.value}-${endIndex.value} of ${reviews.value.length} Reviews`
+  }
+})
 </script>
+
+<template>
+  <Box paddingBlock="400" class="header">
+    <div style="display: flex; align-items: center; gap: 10px">
+      <Text variant="headingLg" as="h1"> Reviews Dashboard </Text>
+       <Badge :tone="allReviewsBadgeTone" as="h1">
+        {{ showBadgeText }}
+      </Badge>
+    </div>
+    <RouterLink to="/new-review">
+      <Button class="button" accessibilityLabel="Write a Product Review">
+        Create a Product Review
+      </Button>
+    </RouterLink>
+  </Box>
+
+  <LegacyCard>
+    <div v-if="reviewsStore.reviewCount">
+      <Tabs :tabs="tabs" :selected="selected" @select="handleTabChange" />
+    </div>
+    <div v-else>
+      <SkeletonTabs :count="tabs.length" />
+    </div>
+    <Reviews :showPublished="showPublished" />
+  </LegacyCard>
+</template>
 
 <style lang="scss">
 .review-body {
@@ -186,7 +183,6 @@ span.Polaris-Text--root.Polaris-Text--medium.Polaris-Text--bodySm {
 
 .pageNumbers {
   width: 500px;
-  /* display: block; */
   padding: 20px 20px;
 }
 </style>

@@ -5,8 +5,12 @@ import { createRatingFromFirstDigit } from '@/utils/helper'
 import { useIndexResourceState } from '@ownego/polaris-vue'
 import { useTimeAgo } from '@vueuse/core'
 import { computed, onMounted, ref, watch } from 'vue'
+import { useRouter } from 'vue-router'
+
+const props = defineProps<{ showPublished: boolean }>()
 
 const reviewsStore = useReviewsStore()
+const router = useRouter()
 
 type Reviewer = {
   name: string
@@ -40,7 +44,7 @@ onMounted(() => {
 })
 
 watch(
-  () => reviewsStore.published,
+  () => (props.showPublished ? reviewsStore.published : reviewsStore.sorted),
   (updatedReviews) => {
     reviews.value = updatedReviews
     calculateDisplayedReviews()
@@ -57,6 +61,17 @@ const resourceName = {
 const { selectedResources, allResourcesSelected, handleSelectionChange } = useIndexResourceState(
   reviews.value
 )
+
+const deleteSelectedReviews = () => {
+  if (selectedResources.value.length === 0) {
+    console.warn('No reviews selected for deletion')
+    return
+  }
+
+  selectedResources.value.forEach((id) => reviewsStore.deleteReview(id))
+
+  selectedResources.value = []
+}
 
 const publishSelectedReviews = () => {
   if (selectedResources.value.length === 0) {
@@ -80,24 +95,8 @@ const promotedBulkActions = [
   }
 ]
 
-const deleteSelectedReviews = () => {
-  console.log('Delete Selected')
-
-  if (selectedResources.value.length === 0) {
-    console.warn('No reviews selected for deletion')
-    return
-  }
-
-  selectedResources.value.forEach((id) => reviewsStore.deleteReview(id))
-
-  selectedResources.value = []
-}
-
 const handleDeleteReview = (review: string) => {
-  console.log(review)
   reviewsStore.deleteReview(review)
-  selectedResources.value = []
-
 }
 
 const ITEMS_PER_PAGE = 10
@@ -128,9 +127,8 @@ const handlePageChange = (page: number) => {
   navbar?.scrollIntoView({ behavior: 'smooth' })
 }
 
-const handleUnpublish = (review: string) => {
-  console.log('unpublish', review)
 
+const handlePublish = (review: string) => {
   reviewsStore.publishReview(review)
 }
 
@@ -138,6 +136,10 @@ calculateDisplayedReviews()
 
 const startIndex = computed(() => (currentPage.value - 1) * ITEMS_PER_PAGE + 1)
 const endIndex = computed(() => Math.min(currentPage.value * ITEMS_PER_PAGE, reviews.value.length))
+
+const handleEditReview = (id: string) => {
+  router.push(`/edit-review/${id}`)
+}
 </script>
 
 <template>
@@ -216,12 +218,12 @@ const endIndex = computed(() => Math.min(currentPage.value * ITEMS_PER_PAGE, rev
           </BlockStack>
           <box paddingBlock="200">
             <div v-if="!review.published">
-              <Button>Publish Review</Button>
+              <Button @click="()=> handlePublish(id)">Publish Review</Button>
             </div>
             <div v-else>
               <Text tone="success">This review has been published already</Text>
               <Box paddingBlock="200">
-                <Button @click="() => handleUnpublish(id)">Hide Review</Button>
+                <Button @click="() => handlePublish(id)">Hide Review</Button>
               </Box>
             </div>
           </box>
@@ -230,8 +232,8 @@ const endIndex = computed(() => Math.min(currentPage.value * ITEMS_PER_PAGE, rev
         <IndexTableCell>
           <Link dataPrimaryLink> </Link>
           <ButtonGroup variant="segmented">
-            <Button @click="() => console.log('view button')">View</Button>
-            <Button>Edit</Button>
+            <Button @click="() => handleEditReview(id)">View</Button>
+            <Button @click="() => handleEditReview(id)">Edit</Button>
             <Button @click="() => handleDeleteReview(id)">Delete</Button>
           </ButtonGroup>
         </IndexTableCell>
@@ -241,10 +243,10 @@ const endIndex = computed(() => Math.min(currentPage.value * ITEMS_PER_PAGE, rev
 
   <div v-else>
     <EmptyState
-      heading="There are currently no published reviews"
+      heading="There are currently no reviews"
       image="https://cdn.shopify.com/s/files/1/0262/4071/2726/files/emptystate-files.png"
     >
-      <p>Once reviews are published they will appear here</p>
+      <p>Once reviews are available they will appear here</p>
     </EmptyState>
   </div>
   <Divider borderColor="border" borderWidth="100" />
